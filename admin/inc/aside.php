@@ -37,7 +37,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="mailbox.html" class="ttr-material-button"><span class="ttr-label">Clear Student</span></a>
+                            <a href="approve-student-clearance.php" class="ttr-material-button"><span class="ttr-label">Approve Student Clearance</span></a>
                         </li>
                         <li>
                             <a href="mailbox-compose.html" class="ttr-material-button"><span class="ttr-label">Clearance Status</span></a>

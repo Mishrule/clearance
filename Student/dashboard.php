@@ -1,376 +1,370 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    Paper Dashboard 2 by Creative Tim
-  </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <!-- CSS Files -->
-  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
-</head>
+<?php require_once('inc/head.php');?>
+<body class="ttr-opened-sidebar ttr-pinned-sidebar">
+	
+	<!-- header start -->
+	<?php require_once('inc/header.php');?>
+	
+	<!-- header end -->
+	<!-- Left sidebar menu start -->
+	<?php require_once('inc/aside.php');?>
+	
+	<!-- Left sidebar menu end -->
 
-<body class="">
-  <div class="wrapper ">
-    <div class="sidebar" data-color="white" data-active-color="danger">
-      <div class="logo">
-        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
-          <div class="logo-image-small">
-            <img src="../assets/img/logo-small.png">
-          </div>
-          <!-- <p>CT</p> -->
-        </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
-        </a>
-      </div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="active ">
-            <a href="./dashboard.html">
-              <i class="nc-icon nc-bank"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li>
-            <a href="./icons.html">
-              <i class="nc-icon nc-diamond"></i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li>
-            <a href="./map.html">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li>
-            <a href="./notifications.html">
-              <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li>
-            <a href="./user.html">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Profile</p>
-            </a>
-          </li>
-          <li>
-            <a href="./tables.html">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li>
-            <a href="./typography.html">
-              <i class="nc-icon nc-caps-small"></i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="active-pro">
-            <a href="./upgrade.html">
-              <i class="nc-icon nc-spaceship"></i>
-              <p>Upgrade to PRO</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="main-panel">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <div class="navbar-toggle">
-              <button type="button" class="navbar-toggler">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </button>
-            </div>
-            <a class="navbar-brand" href="javascript:;">Paper Dashboard 2</a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form>
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="nc-icon nc-zoom-split"></i>
-                  </div>
-                </div>
-              </div>
-            </form>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link btn-magnify" href="javascript:;">
-                  <i class="nc-icon nc-layout-11"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Stats</span>
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item btn-rotate dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="nc-icon nc-bell-55"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Some Actions</span>
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link btn-rotate" href="javascript:;">
-                  <i class="nc-icon nc-settings-gear-65"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Account</span>
-                  </p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- End Navbar -->
-      <div class="content">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-              <div class="card-body ">
-                <div class="row">
-                  <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-globe text-warning"></i>
-                    </div>
-                  </div>
-                  <div class="col-7 col-md-8">
-                    <div class="numbers">
-                      <p class="card-category">Capacity</p>
-                      <p class="card-title">150GB<p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                  <i class="fa fa-refresh"></i>
-                  Update Now
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-              <div class="card-body ">
-                <div class="row">
-                  <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-money-coins text-success"></i>
-                    </div>
-                  </div>
-                  <div class="col-7 col-md-8">
-                    <div class="numbers">
-                      <p class="card-category">Revenue</p>
-                      <p class="card-title">$ 1,345<p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                  <i class="fa fa-calendar-o"></i>
-                  Last day
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-              <div class="card-body ">
-                <div class="row">
-                  <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-vector text-danger"></i>
-                    </div>
-                  </div>
-                  <div class="col-7 col-md-8">
-                    <div class="numbers">
-                      <p class="card-category">Errors</p>
-                      <p class="card-title">23<p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                  <i class="fa fa-clock-o"></i>
-                  In the last hour
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-              <div class="card-body ">
-                <div class="row">
-                  <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-favourite-28 text-primary"></i>
-                    </div>
-                  </div>
-                  <div class="col-7 col-md-8">
-                    <div class="numbers">
-                      <p class="card-category">Followers</p>
-                      <p class="card-title">+45K<p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                  <i class="fa fa-refresh"></i>
-                  Update now
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card ">
-              <div class="card-header ">
-                <h5 class="card-title">Users Behavior</h5>
-                <p class="card-category">24 Hours performance</p>
-              </div>
-              <div class="card-body ">
-                <canvas id=chartHours width="400" height="100"></canvas>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                  <i class="fa fa-history"></i> Updated 3 minutes ago
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card ">
-              <div class="card-header ">
-                <h5 class="card-title">Email Statistics</h5>
-                <p class="card-category">Last Campaign Performance</p>
-              </div>
-              <div class="card-body ">
-                <canvas id="chartEmail"></canvas>
-              </div>
-              <div class="card-footer ">
-                <div class="legend">
-                  <i class="fa fa-circle text-primary"></i> Opened
-                  <i class="fa fa-circle text-warning"></i> Read
-                  <i class="fa fa-circle text-danger"></i> Deleted
-                  <i class="fa fa-circle text-gray"></i> Unopened
-                </div>
-                <hr>
-                <div class="stats">
-                  <i class="fa fa-calendar"></i> Number of emails sent
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-title">NASDAQ: AAPL</h5>
-                <p class="card-category">Line Chart with Points</p>
-              </div>
-              <div class="card-body">
-                <canvas id="speedChart" width="400" height="100"></canvas>
-              </div>
-              <div class="card-footer">
-                <div class="chart-legend">
-                  <i class="fa fa-circle text-info"></i> Tesla Model S
-                  <i class="fa fa-circle text-warning"></i> BMW 5 Series
-                </div>
-                <hr />
-                <div class="card-stats">
-                  <i class="fa fa-check"></i> Data information certified
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="footer footer-black  footer-white ">
-        <div class="container-fluid">
-          <div class="row">
-            <nav class="footer-nav">
-              <ul>
-                <li><a href="https://www.creative-tim.com" target="_blank">Creative Tim</a></li>
-                <li><a href="https://www.creative-tim.com/blog" target="_blank">Blog</a></li>
-                <li><a href="https://www.creative-tim.com/license" target="_blank">Licenses</a></li>
-              </ul>
-            </nav>
-            <div class="credits ml-auto">
-              <span class="copyright">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
-              </span>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
-  <!--   Core JS Files   -->
-  <script src="../assets/js/core/jquery.min.js"></script>
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
-  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-  <script src="../assets/demo/demo.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
-    });
-  </script>
+	<!--Main container start -->
+	<main class="ttr-wrapper">
+		<div class="container-fluid">
+			<div class="db-breadcrumb">
+				<h4 class="breadcrumb-title">Dashboard</h4>
+				<ul class="db-breadcrumb-list">
+					<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+					<li>Dashboard</li>
+				</ul>
+			</div>	
+			<!-- Card -->
+			<div class="row">
+				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
+					<div class="widget-card widget-bg1">					 
+						<div class="wc-item">
+							<h4 class="wc-title">
+								Financial Clearance
+							</h4>
+							<span class="wc-des">
+								Status
+							</span>
+							<!-- <span class="wc-stats">
+								$<span class="counter">18</span>M 
+							</span>		 -->
+							<div class="progress wc-progress">
+								<div class="progress-bar" role="progressbar" style="width: 78%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+							</div>
+							<span class="wc-progress-bx">
+								<span class="wc-change">
+									Pending
+								</span>
+								<span class="wc-number ml-auto">
+									78%
+								</span>
+							</span>
+						</div>				      
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
+					<div class="widget-card widget-bg2">					 
+						<div class="wc-item">
+							<h4 class="wc-title">
+								 Department Clearance 
+							</h4>
+							<span class="wc-des">
+								Status
+							</span>
+							<!-- <span class="wc-stats counter">
+								120 
+							</span>		 -->
+							<div class="progress wc-progress">
+								<div class="progress-bar" role="progressbar" style="width: 88%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+							</div>
+							<span class="wc-progress-bx">
+								<span class="wc-change">
+									Pending
+								</span>
+								<!-- <span class="wc-number ml-auto">
+									88%
+								</span> -->
+							</span>
+						</div>				      
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
+					<div class="widget-card widget-bg3">					 
+						<div class="wc-item">
+							<h4 class="wc-title">
+								Library Clearance
+							</h4>
+							<span class="wc-des">
+								Status
+							</span>
+							<!-- <span class="wc-stats counter">
+								772 
+							</span>		 -->
+							<div class="progress wc-progress">
+								<div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+							</div>
+							<span class="wc-progress-bx">
+								<span class="wc-change">
+									Pending
+								</span>
+								<!-- <span class="wc-number ml-auto">
+									65%
+								</span> -->
+							</span>
+						</div>				      
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
+					<div class="widget-card widget-bg4">					 
+						<div class="wc-item">
+							<h4 class="wc-title">
+								Hall Clearance 
+							</h4>
+							<span class="wc-des">
+								Status
+							</span>
+							<!-- <span class="wc-stats counter">
+								350 
+							</span>		 -->
+							<div class="progress wc-progress">
+								<div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+							</div>
+							<span class="wc-progress-bx">
+								<span class="wc-change">
+									Pending
+								</span>
+								<!-- <span class="wc-number ml-auto">
+									90%
+								</span> -->
+							</span>
+						</div>				      
+					</div>
+				</div>
+			</div>
+			<!-- Card END -->
+			<!-- <div class="row">
+				<!-- Your Profile Views Chart 
+				<div class="col-lg-8 m-b30">
+					<div class="widget-box">
+						<div class="wc-title">
+							<h4>Your Profile Views</h4>
+						</div>
+						<div class="widget-inner">
+							<canvas id="chart" width="100" height="45"></canvas>
+						</div>
+					</div>
+				</div>
+				<!-- Your Profile Views Chart END
+				<div class="col-lg-4 m-b30">
+					<div class="widget-box">
+						<div class="wc-title">
+							<h4>Notifications</h4>
+						</div>
+						<div class="widget-inner">
+							<div class="noti-box-list">
+								<ul>
+									<li>
+										<span class="notification-icon dashbg-gray">
+											<i class="fa fa-check"></i>
+										</span>
+										<span class="notification-text">
+											<span>Sneha Jogi</span> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 02:14</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-yellow">
+											<i class="fa fa-shopping-cart"></i>
+										</span>
+										<span class="notification-text">
+											<a href="#">Your order is placed</a> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 7 Min</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-red">
+											<i class="fa fa-bullhorn"></i>
+										</span>
+										<span class="notification-text">
+											<span>Your item is shipped</span> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 2 May</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-green">
+											<i class="fa fa-comments-o"></i>
+										</span>
+										<span class="notification-text">
+											<a href="#">Sneha Jogi</a> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 14 July</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-primary">
+											<i class="fa fa-file-word-o"></i>
+										</span>
+										<span class="notification-text">
+											<span>Sneha Jogi</span> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 15 Min</span>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 m-b30">
+					<div class="widget-box">
+						<div class="wc-title">
+							<h4>New Users</h4>
+						</div>
+						<div class="widget-inner">
+							<div class="new-user-list">
+								<ul>
+									<li>
+										<span class="new-users-pic">
+											<img src="assets/images/testimonials/pic1.jpg" alt=""/>
+										</span>
+										<span class="new-users-text">
+											<a href="#" class="new-users-name">Anna Strong </a>
+											<span class="new-users-info">Visual Designer,Google Inc </span>
+										</span>
+										<span class="new-users-btn">
+											<a href="#" class="btn button-sm outline">Follow</a>
+										</span>
+									</li>
+									<li>
+										<span class="new-users-pic">
+											<img src="assets/images/testimonials/pic2.jpg" alt=""/>
+										</span>
+										<span class="new-users-text">
+											<a href="#" class="new-users-name"> Milano Esco </a>
+											<span class="new-users-info">Product Designer, Apple Inc </span>
+										</span>
+										<span class="new-users-btn">
+											<a href="#" class="btn button-sm outline">Follow</a>
+										</span>
+									</li>
+									<li>
+										<span class="new-users-pic">
+											<img src="assets/images/testimonials/pic1.jpg" alt=""/>
+										</span>
+										<span class="new-users-text">
+											<a href="#" class="new-users-name">Nick Bold  </a>
+											<span class="new-users-info">Web Developer, Facebook Inc </span>
+										</span>
+										<span class="new-users-btn">
+											<a href="#" class="btn button-sm outline">Follow</a>
+										</span>
+									</li>
+									<li>
+										<span class="new-users-pic">
+											<img src="assets/images/testimonials/pic2.jpg" alt=""/>
+										</span>
+										<span class="new-users-text">
+											<a href="#" class="new-users-name">Wiltor Delton </a>
+											<span class="new-users-info">Project Manager, Amazon Inc </span>
+										</span>
+										<span class="new-users-btn">
+											<a href="#" class="btn button-sm outline">Follow</a>
+										</span>
+									</li>
+									<li>
+										<span class="new-users-pic">
+											<img src="assets/images/testimonials/pic3.jpg" alt=""/>
+										</span>
+										<span class="new-users-text">
+											<a href="#" class="new-users-name">Nick Stone </a>
+											<span class="new-users-info">Project Manager, Amazon Inc  </span>
+										</span>
+										<span class="new-users-btn">
+											<a href="#" class="btn button-sm outline">Follow</a>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 m-b30">
+					<div class="widget-box">
+						<div class="wc-title">
+							<h4>Orders</h4>
+						</div>
+						<div class="widget-inner">
+							<div class="orders-list">
+								<ul>
+									<li>
+										<span class="orders-title">
+											<a href="#" class="orders-title-name">Anna Strong </a>
+											<span class="orders-info">Order #02357 | Date 12/08/2019</span>
+										</span>
+										<span class="orders-btn">
+											<a href="#" class="btn button-sm red">Unpaid</a>
+										</span>
+									</li>
+									<li>
+										<span class="orders-title">
+											<a href="#" class="orders-title-name">Revenue</a>
+											<span class="orders-info">Order #02357 | Date 12/08/2019</span>
+										</span>
+										<span class="orders-btn">
+											<a href="#" class="btn button-sm red">Unpaid</a>
+										</span>
+									</li>
+									<li>
+										<span class="orders-title">
+											<a href="#" class="orders-title-name">Anna Strong </a>
+											<span class="orders-info">Order #02357 | Date 12/08/2019</span>
+										</span>
+										<span class="orders-btn">
+											<a href="#" class="btn button-sm green">Paid</a>
+										</span>
+									</li>
+									<li>
+										<span class="orders-title">
+											<a href="#" class="orders-title-name">Revenue</a>
+											<span class="orders-info">Order #02357 | Date 12/08/2019</span>
+										</span>
+										<span class="orders-btn">
+											<a href="#" class="btn button-sm green">Paid</a>
+										</span>
+									</li>
+									<li>
+										<span class="orders-title">
+											<a href="#" class="orders-title-name">Anna Strong </a>
+											<span class="orders-info">Order #02357 | Date 12/08/2019</span>
+										</span>
+										<span class="orders-btn">
+											<a href="#" class="btn button-sm green">Paid</a>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="col-lg-12 m-b30">
+					<div class="widget-box">
+						<div class="wc-title">
+							<h4>Basic Calendar</h4>
+						</div>
+						<div class="widget-inner">
+							<div id="calendar"></div>
+						</div>
+					</div>
+				</div> 
+			</div> -->
+		</div>
+	</main>
+	<div class="ttr-overlay"></div>
+
+	<?php require_once('inc/footerjs.php');?>
+
 </body>
 
 </html>

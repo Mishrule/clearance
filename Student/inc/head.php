@@ -45,6 +45,7 @@
         <!-- STYLESHEETS ============================================= -->
         <link rel="stylesheet" type="text/css" href="../admin/assets/css/style.css">
         <link rel="stylesheet" type="text/css" href="../admin/assets/css/dashboard.css">
+        <link href="../assets/demo/demo.css" rel="stylesheet" />
         <link class="skin" rel="stylesheet" type="text/css" href="../admin/assets/css/color/color-1.css">
         
     </head>

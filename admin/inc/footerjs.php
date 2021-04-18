@@ -20,9 +20,10 @@
     <script src="./assets/vendors/calendar/moment.min.js"></script>
     <script src="./assets/vendors/calendar/fullcalendar.js"></script>
     <script src="./assets/vendors/switcher/switcher.js"></script>
+    <script src="./assets/js/showNofication.js"></script>
     <script>
       $(document).ready(function() {
-    
+        
         $("#calendar").fullCalendar({
           header: {
             left: "prev,next today",

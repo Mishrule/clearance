@@ -24,16 +24,7 @@
                 <li>
                     <a href="../index.html" class="ttr-material-button ttr-submenu-toggle">HOME</a>
                 </li>
-                <li>
-                    <a href="#" class="ttr-material-button ttr-submenu-toggle">SETTINGS <i class="fa fa-angle-down"></i></a>
-                    <div class="ttr-header-submenu">
-                        <ul>
-                            <li><a href="../courses.html">Create Hall</a></li>
-                            <li><a href="../event.html">Create Department</a></li>
-                            <li><a href="../membership.html">Create Year Group</a></li>
-                        </ul>
-                    </div>
-                </li>
+                
             </ul>
             <!-- header left menu end -->
         </div>

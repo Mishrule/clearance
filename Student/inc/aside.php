@@ -18,7 +18,7 @@
         <nav class="ttr-sidebar-navi">
             <ul>
                 <li>
-                    <a href="index.html" class="ttr-material-button">
+                    <a href="dashboard.php" class="ttr-material-button">
                         <span class="ttr-icon"><i class="ti-home"></i></span>
                         <span class="ttr-label">Dashboard</span>
                     </a>
@@ -37,10 +37,13 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="mailbox.html" class="ttr-material-button"><span class="ttr-label">Clearance Request</span></a>
+                            <a href="request-clearance.php" class="ttr-material-button"><span class="ttr-label">Clearance Request</span></a>
                         </li>
                         <li>
-                            <a href="mailbox-compose.html" class="ttr-material-button"><span class="ttr-label">Clearance Status</span></a>
+                            <a href="clearance-status.php" class="ttr-material-button"><span class="ttr-label">Clearance Status</span></a>
+                        </li>
+                        <li>
+                            <a href="clearance-chit.php" class="ttr-material-button"><span class="ttr-label">Clearance Chit</span></a>
                         </li>
                      <!--   <li>
                             <a href="mailbox-read.html" class="ttr-material-button"><span class="ttr-label">Mail Read</span></a>
@@ -88,10 +91,10 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="user-profile.html" class="ttr-material-button"><span class="ttr-label">Profile</span></a>
+                            <a href="user-profile.php" class="ttr-material-button"><span class="ttr-label">Profile</span></a>
                         </li>
                         <li>
-                            <a href="teacher-profile.html" class="ttr-material-button"><span class="ttr-label">Logout</span></a>
+                            <a href="logout.php" class="ttr-material-button"><span class="ttr-label">Logout</span></a>
                         </li>
                     </ul>
                 </li>

@@ -20,6 +20,7 @@
     <script src="../admin/assets/vendors/calendar/moment.min.js"></script>
     <script src="../admin/assets/vendors/calendar/fullcalendar.js"></script>
     <script src="../admin/assets/vendors/switcher/switcher.js"></script>
+    <script src="../admin/assets/js/showNofication.js"></script>
     <script>
       $(document).ready(function() {
     
