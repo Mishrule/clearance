@@ -3,14 +3,15 @@
     require_once('datetime.php');
 
     //========Create a financialClearance
-    if(isset($_POST['financial_clearance_RequestBTN'])){
+    if(isset($_POST['financialRequestBTN'])){
         $financialClearanceMessageArray = array();
         $financialClearanceName = mysqli_real_escape_string($con, $_POST['financial_title']);
         $financial_status = mysqli_real_escape_string($con, $_POST['financial_status']);
+        $financialYear = mysqli_real_escape_string($con, $_POST['financialYear']);
         $studentid = "5151040051";
         $studentname = "Bismark Teye";
 
-        $createfinancialClearanceSQL = "INSERT INTO clearance VALUES('','$studentid','$studentname','$financialClearanceName','$financial_status','$DateTime','')";
+        $createfinancialClearanceSQL = "INSERT INTO clearance VALUES('','$studentid','$studentname','$financialClearanceName','$financial_status','$financialYear','$DateTime','')";
 
         $createfinancialClearanceResult = mysqli_query($con, $createfinancialClearanceSQL);
 
@@ -27,14 +28,15 @@
     }
 
     //========Create a departmentClearance
-    if(isset($_POST['department_clearance_RequestBTN'])){
+    if(isset($_POST['departmentRequestBTN'])){
         $departmentClearanceMessageArray = array();
         $departmentClearanceName = mysqli_real_escape_string($con, $_POST['department_title']);
         $department_status = mysqli_real_escape_string($con, $_POST['department_status']);
+        $departmentYear = mysqli_real_escape_string($con, $_POST['departmentYear']);
         $studentid = "5151040051";
         $studentname = "Bismark Teye";
 
-        $createdepartmentClearanceSQL = "INSERT INTO clearance VALUES('','$studentid','$studentname','$departmentClearanceName','$department_status','$DateTime','')";
+        $createdepartmentClearanceSQL = "INSERT INTO clearance VALUES('','$studentid','$studentname','$departmentClearanceName','$department_status','$departmentYear','$DateTime','')";
 
         $createdepartmentClearanceResult = mysqli_query($con, $createdepartmentClearanceSQL);
 
@@ -51,14 +53,15 @@
     }
 
      //========Create a Library Clearance
-     if(isset($_POST['library_clearance_RequestBTN'])){
+     if(isset($_POST['libraryRequestBTN'])){
         $libraryClearanceMessageArray = array();
         $libraryClearanceName = mysqli_real_escape_string($con, $_POST['library_title']);
         $library_status = mysqli_real_escape_string($con, $_POST['library_status']);
+        $libraryYear = mysqli_real_escape_string($con, $_POST['libraryYear']);
         $studentid = "5151040051";
         $studentname = "Bismark Teye";
 
-        $createlibraryClearanceSQL = "INSERT INTO clearance VALUES('','$studentid','$studentname','$libraryClearanceName','$library_status','$DateTime','')";
+        $createlibraryClearanceSQL = "INSERT INTO clearance VALUES('','$studentid','$studentname','$libraryClearanceName','$library_status','$libraryYear','$DateTime','')";
 
         $createlibraryClearanceResult = mysqli_query($con, $createlibraryClearanceSQL);
 
@@ -75,14 +78,15 @@
     }
 
      //========Create a Hall Clearance
-     if(isset($_POST['hall_clearance_RequestBTN'])){
+     if(isset($_POST['hallRequestBTN'])){
         $hallClearanceMessageArray = array();
         $hallClearanceName = mysqli_real_escape_string($con, $_POST['hall_title']);
         $hall_status = mysqli_real_escape_string($con, $_POST['hall_status']);
+        $hallYear = mysqli_real_escape_string($con, $_POST['hallYear']);
         $studentid = "5151040051";
         $studentname = "Bismark Teye";
 
-        $createhallClearanceSQL = "INSERT INTO clearance VALUES('','$studentid','$studentname','$hallClearanceName','$hall_status','$DateTime','')";
+        $createhallClearanceSQL = "INSERT INTO clearance VALUES('','$studentid','$studentname','$hallClearanceName','$hall_status','$hallYear','$DateTime','')";
 
         $createhallClearanceResult = mysqli_query($con, $createhallClearanceSQL);
 

@@ -18,7 +18,7 @@
         <nav class="ttr-sidebar-navi">
             <ul>
                 <li>
-                    <a href="index.html" class="ttr-material-button">
+                    <a href="index.php" class="ttr-material-button">
                         <span class="ttr-icon"><i class="ti-home"></i></span>
                         <span class="ttr-label">Dashboard</span>
                     </a>
@@ -40,7 +40,10 @@
                             <a href="approve-student-clearance.php" class="ttr-material-button"><span class="ttr-label">Approve Student Clearance</span></a>
                         </li>
                         <li>
-                            <a href="mailbox-compose.html" class="ttr-material-button"><span class="ttr-label">Clearance Status</span></a>
+                            <a href="clearance-status.php" class="ttr-material-button"><span class="ttr-label">Clearance Status</span></a>
+                        </li>
+                        <li>
+                            <a href="search-student.php" class="ttr-material-button"><span class="ttr-label">Search Student</span></a>
                         </li>
                      <!--   <li>
                             <a href="mailbox-read.html" class="ttr-material-button"><span class="ttr-label">Mail Read</span></a>

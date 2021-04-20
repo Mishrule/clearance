@@ -1,4 +1,4 @@
-<?php require_once('../scripts/db.php');?>
+<?php require_once('../scripts/db.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,21 +67,21 @@
 											<!-- <li class="card-courses-stats">
 												<a href="#" class="btn button-sm green radius-xl">Not Request</a>
 											</li> -->
-											<?php 
-												$financialStudentMsg = '';
-												$financialStudentID = "5151040051";
-												$financialClearanceType = "Financial Clearance (Including SRC)";
-												$financialClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$financialStudentID' AND clearance_type = '$financialClearanceType'";
+											<?php
+											$financialStudentMsg = '';
+											$financialStudentID = "5151040051";
+											$financialClearanceType = "Financial Clearance (Including SRC)";
+											$financialClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$financialStudentID' AND clearance_type = '$financialClearanceType'";
 
-												$financialClearanceStatusResult = mysqli_query($con, $financialClearanceStatusSQL);
+											$financialClearanceStatusResult = mysqli_query($con, $financialClearanceStatusSQL);
 
-												if(mysqli_num_rows($financialClearanceStatusResult)>0){
-													while($financialClearanceStatusRow = mysqli_fetch_array($financialClearanceStatusResult)){
-														$financialStudentMsg = $financialClearanceStatusRow['clearance_status'];
-													}
-												}else{
-													$financialStudentMsg = "No Request Made";
+											if (mysqli_num_rows($financialClearanceStatusResult) > 0) {
+												while ($financialClearanceStatusRow = mysqli_fetch_array($financialClearanceStatusResult)) {
+													$financialStudentMsg = $financialClearanceStatusRow['clearance_status'];
 												}
+											} else {
+												$financialStudentMsg = "No Request Made";
+											}
 											?>
 											<li class="card-courses-price">
 
@@ -95,7 +95,7 @@
 											<p>Financial Clearance is to Testify the each student do not owe any Fee of any sort including Student Representative Councel (SRC) Dues.<br><strong>NB. If any students owe these clearance statement will not be graduated until it is paid.</strong></p>
 										</div>
 										<div class="col-md-12">
-											<a href="#" id="financial_clearance_Request" name="financial_clearance_Request" class="btn green radius-xl outline">Request</a>
+											<button type="button" id="financial_clearance_Request" name="financial_clearance_Request" class="btn green radius-xl outline" data-toggle="modal" data-target="#financialModal">Request</button>
 											<a href="#" class="btn red outline radius-xl ">Cancel</a>
 										</div>
 									</div>
@@ -138,21 +138,21 @@
 											<!-- <li class="card-courses-stats">
 												<a href="#" class="btn button-sm green radius-xl">Not Request</a>
 											</li> -->
-											<?php 
-												$departmentStudentMsg = '';
-												$departmentStudentID = "5151040051";
-												$departmentClearanceType = "Department Clearance (Departmental Dues)";
-												$departmentClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$departmentStudentID' AND clearance_type = '$departmentClearanceType'";
+											<?php
+											$departmentStudentMsg = '';
+											$departmentStudentID = "5151040051";
+											$departmentClearanceType = "Department Clearance (Departmental Dues)";
+											$departmentClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$departmentStudentID' AND clearance_type = '$departmentClearanceType'";
 
-												$departmentClearanceStatusResult = mysqli_query($con, $departmentClearanceStatusSQL);
+											$departmentClearanceStatusResult = mysqli_query($con, $departmentClearanceStatusSQL);
 
-												if(mysqli_num_rows($departmentClearanceStatusResult)>0){
-													while($departmentClearanceStatusRow = mysqli_fetch_array($departmentClearanceStatusResult)){
-														$departmentStudentMsg = $departmentClearanceStatusRow['clearance_status'];
-													}
-												}else{
-													$departmentStudentMsg = "No Request Made";
+											if (mysqli_num_rows($departmentClearanceStatusResult) > 0) {
+												while ($departmentClearanceStatusRow = mysqli_fetch_array($departmentClearanceStatusResult)) {
+													$departmentStudentMsg = $departmentClearanceStatusRow['clearance_status'];
 												}
+											} else {
+												$departmentStudentMsg = "No Request Made";
+											}
 											?>
 											<li class="card-courses-price">
 
@@ -166,7 +166,7 @@
 											<p>Department Clearance is to Testify the each student belong to a deparment must be approved and that he/she do not owe the Department.<br><strong>NB. If any students owe these clearance statement will not be graduated until it is paid.</strong></p>
 										</div>
 										<div class="col-md-12">
-											<a href="#" id="department_clearance_Request" name="department_clearance_Request" class="btn green radius-xl outline">Request</a>
+											<a href="#" id="department_clearance_Request" name="department_clearance_Request" class="btn green radius-xl outline" data-toggle="modal" data-target="#departmentModal">Request</a>
 											<a href="#" class="btn red outline radius-xl ">Cancel</a>
 										</div>
 									</div>
@@ -209,21 +209,21 @@
 											<!-- <li class="card-courses-stats">
 												<a href="#" class="btn button-sm green radius-xl">Not Request</a>
 											</li> -->
-											<?php 
-												$libraryStudentMsg = '';
-												$libraryStudentID = "5151040051";
-												$libraryClearanceType = "Library Clearance (Lost of Books)";
-												$libraryClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$libraryStudentID' AND clearance_type = '$libraryClearanceType'";
+											<?php
+											$libraryStudentMsg = '';
+											$libraryStudentID = "5151040051";
+											$libraryClearanceType = "Library Clearance (Lost of Books)";
+											$libraryClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$libraryStudentID' AND clearance_type = '$libraryClearanceType'";
 
-												$libraryClearanceStatusResult = mysqli_query($con, $libraryClearanceStatusSQL);
+											$libraryClearanceStatusResult = mysqli_query($con, $libraryClearanceStatusSQL);
 
-												if(mysqli_num_rows($libraryClearanceStatusResult)>0){
-													while($libraryClearanceStatusRow = mysqli_fetch_array($libraryClearanceStatusResult)){
-														$libraryStudentMsg = $libraryClearanceStatusRow['clearance_status'];
-													}
-												}else{
-													$libraryStudentMsg = "No Request Made";
+											if (mysqli_num_rows($libraryClearanceStatusResult) > 0) {
+												while ($libraryClearanceStatusRow = mysqli_fetch_array($libraryClearanceStatusResult)) {
+													$libraryStudentMsg = $libraryClearanceStatusRow['clearance_status'];
 												}
+											} else {
+												$libraryStudentMsg = "No Request Made";
+											}
 											?>
 											<li class="card-courses-price">
 
@@ -237,7 +237,7 @@
 											<p>Library Clearance is to check if students has return all the books collected from the school library. If you have collected any book from the school Library submit it before you can cleared<br><strong>NB. If any students owe these clearance statement will not be graduated until it is paid.</strong></p>
 										</div>
 										<div class="col-md-12">
-											<a href="#" id="library_clearance_Request" name="library_clearance_Request"  class="btn green radius-xl outline">Request</a>
+											<a href="#" id="library_clearance_Request" name="library_clearance_Request" class="btn green radius-xl outline"  data-toggle="modal" data-target="#libraryModal">Request</a>
 											<a href="#" class="btn red outline radius-xl ">Cancel</a>
 										</div>
 									</div>
@@ -281,21 +281,21 @@
 											<!-- <li class="card-courses-stats">
 												<a href="#" class="btn button-sm green radius-xl">Not Request</a>
 											</li> -->
-											<?php 
-												$hallStudentMsg = '';
-												$hallStudentID = "5151040051";
-												$hallClearanceType = "Hall Clearance";
-												$hallClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$hallStudentID' AND clearance_type = '$hallClearanceType'";
+											<?php
+											$hallStudentMsg = '';
+											$hallStudentID = "5151040051";
+											$hallClearanceType = "Hall Clearance";
+											$hallClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$hallStudentID' AND clearance_type = '$hallClearanceType'";
 
-												$hallClearanceStatusResult = mysqli_query($con, $hallClearanceStatusSQL);
+											$hallClearanceStatusResult = mysqli_query($con, $hallClearanceStatusSQL);
 
-												if(mysqli_num_rows($hallClearanceStatusResult)>0){
-													while($hallClearanceStatusRow = mysqli_fetch_array($hallClearanceStatusResult)){
-														$hallStudentMsg = $hallClearanceStatusRow['clearance_status'];
-													}
-												}else{
-													$hallStudentMsg = "No Request Made";
+											if (mysqli_num_rows($hallClearanceStatusResult) > 0) {
+												while ($hallClearanceStatusRow = mysqli_fetch_array($hallClearanceStatusResult)) {
+													$hallStudentMsg = $hallClearanceStatusRow['clearance_status'];
 												}
+											} else {
+												$hallStudentMsg = "No Request Made";
+											}
 											?>
 											<li class="card-courses-price">
 
@@ -309,7 +309,7 @@
 											<p>Hall Clearance checks and see if student has paid all is Halls and also has not damaged anything purtaining to the Hall.<br> <strong>NB. If any students owe these clearance statement will not be graduated until it is paid.</strong></p>
 										</div>
 										<div class="col-md-12">
-											<a href="#" id="hall_clearance_Request" name="hall_clearance_Request" class="btn green radius-xl outline">Request</a>
+											<a href="#" id="hall_clearance_Request" name="hall_clearance_Request" class="btn green radius-xl outline"  data-toggle="modal" data-target="#hallModal">Request</a>
 											<a href="#" class="btn red outline radius-xl ">Cancel</a>
 										</div>
 									</div>
@@ -333,45 +333,53 @@
 <script>
 	$(document).ready(function() {
 
-		function showMessage(title, text, icon){
-            swal({
-                title: title,
-                text: text,
-                icon: icon
-            });
-        }
+		function showMessage(title, text, icon) {
+			swal({
+				title: title,
+				text: text,
+				icon: icon
+			});
+		}
 
-		$('#financial_clearance_Request').click(function() {
+		$('#financialRequest').click(function() {
 			let financial_title = $('#financial_clearance_Title').text();
 			let financial_status = 'Pending';
-			let financial_clearance_RequestBTN = $('#financial_clearance_Request').text();
-
-
+			let financialRequestBTN = $('#financialRequest').val();
+			let financialYear = $('#financialYear').val();
+			/*alert(financial_title);
+			alert(financial_status);
+			alert(financialRequestBTN);
+			alert(financialYear);*/
 
 			$.ajax({
-				url: '../scripts/clearanceRequestScripts.php',
-				method: 'POST',
-				data: {
-					financial_title,
-					financial_status,
-					financial_clearance_RequestBTN
-				},
-				dataType: 'json',
-				success: function(data) {
-					setTimeout(() => {
-						showMessage(data.title, data.text, data.icon)
-						$('#financial_clearance_status').text('Pending');
-					}, 1000);
-				}
-			})
+					url: '../scripts/clearanceRequestScripts.php',
+					method: 'POST',
+					data: {
+						financial_title,
+						financial_status,
+						financialRequestBTN,
+						financialYear
+					},
+					dataType: 'json',
+					success: function(data) {
+						// $('#financialModal').hide();
+						showMessage(data.title, data.text, data.icon);
+						setTimeout(() => {
+							
+							// $('#financial_clearance_status').text('Pending');
+							window.location.reload();
+						}, 3000);
+					}
+				}) 
 		});
 
 
 		// =============================== Department
-		$('#department_clearance_Request').click(function() {
+		$('#departmentRequest').click(function() {
 			let department_title = $('#department_clearance_Title').text();
 			let department_status = 'Pending';
-			let department_clearance_RequestBTN = $('#department_clearance_Request').text();
+			let departmentRequestBTN = $('#departmentRequest').val();
+			let departmentYear = $('#departmentYear').val();
 
 			$.ajax({
 				url: '../scripts/clearanceRequestScripts.php',
@@ -379,23 +387,27 @@
 				data: {
 					department_title,
 					department_status,
-					department_clearance_RequestBTN
+					departmentRequestBTN,
+					departmentYear
 				},
 				dataType: 'json',
 				success: function(data) {
+					showMessage(data.title, data.text, data.icon);
 					setTimeout(() => {
-						showMessage(data.title, data.text, data.icon)
-						$('#department_clearance_status').text('Pending');
-					}, 1000);
+						
+						// $('#department_clearance_status').text('Pending');
+						window.location.reload();
+					}, 3000);
 				}
 			})
 		});
 
 		// =============================== Library
-		$('#library_clearance_Request').click(function() {
+		$('#libraryRequest').click(function() {
 			let library_title = $('#library_clearance_Title').text();
 			let library_status = 'Pending';
-			let library_clearance_RequestBTN = $('#library_clearance_Request').text();
+			let libraryRequestBTN = $('#libraryRequest').val();
+			let libraryYear = $('#libraryYear').val();
 
 			$.ajax({
 				url: '../scripts/clearanceRequestScripts.php',
@@ -403,23 +415,28 @@
 				data: {
 					library_title,
 					library_status,
-					library_clearance_RequestBTN
+					libraryRequestBTN,
+					libraryYear
 				},
 				dataType: 'json',
 				success: function(data) {
+					showMessage(data.title, data.text, data.icon);
 					setTimeout(() => {
-						showMessage(data.title, data.text, data.icon)
-						$('#library_clearance_status').text('Pending');
-					}, 1000);
+						
+						// $('#library_clearance_status').text('Pending');
+						window.location.reload();
+					}, 3000);
 				}
 			})
 		});
 
 		// =============================== Hall
-		$('#hall_clearance_Request').click(function() {
+		$('#hallRequest').click(function() {
 			let hall_title = $('#hall_clearance_Title').text();
 			let hall_status = 'Pending';
-			let hall_clearance_RequestBTN = $('#hall_clearance_Request').text();
+			let hallRequestBTN = $('#hallRequest').text();
+			let hallYear = $('#hallYear').val();
+
 
 			$.ajax({
 				url: '../scripts/clearanceRequestScripts.php',
@@ -427,14 +444,16 @@
 				data: {
 					hall_title,
 					hall_status,
-					hall_clearance_RequestBTN
+					hallRequestBTN,
+					hallYear
 				},
 				dataType: 'json',
 				success: function(data) {
+					showMessage(data.title, data.text, data.icon);
 					setTimeout(() => {
-						showMessage(data.title, data.text, data.icon)
-						$('#hall_clearance_status').text('Pending');
-					}, 1000);
+						
+						window.location.reload();
+					}, 3000);
 				}
 			})
 		});
@@ -442,3 +461,172 @@
 
 	})
 </script>
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" d>
+  Launch static backdrop modal
+</button> -->
+
+<!-- Modal for Financial Clearance -->
+
+<div class="modal fade" id="financialModal" tabindex="-1" aria-labelledby="financialModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Financial Clearance</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  <label for="financialYearGroup">Select Year Group</label>
+				<select class="form-control" id="financialYear" name="financialYear">
+
+					<?php
+					$showyearGroupDetailSQL = "SELECT * FROM yearGroup ORDER BY created_date DESC";
+					$showyearGroupDetailResult = mysqli_query($con, $showyearGroupDetailSQL);
+					if (mysqli_num_rows($showyearGroupDetailResult) > 0) {
+						while ($showyearGroupDetailRow = mysqli_fetch_array($showyearGroupDetailResult)) {
+
+							echo '<option value="' . $showyearGroupDetailRow['years_year'] . '">' . $showyearGroupDetailRow['years_year'] . '</option>
+                           ';
+						}
+					} else {
+						echo '
+						<option>NO yearGroup Created Yet' . mysqli_error($con) . '</option>
+            	        ';
+					}
+					?>
+
+				</select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="financialRequest" name="financialRequest" class="btn btn-primary" value="request">Request</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Financial Clearance -->
+
+<div class="modal fade" id="departmentModal" tabindex="-1" aria-labelledby="departmentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Department Clearance</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  <label for="departmentYearGroup">Select Year Group</label>
+				<select class="form-control" id="departmentYear" name="departmentYear">
+
+					<?php
+					$showyearGroupDepartDetailSQL = "SELECT * FROM yearGroup ORDER BY created_date DESC";
+					$showyearGroupDepartDetailResult = mysqli_query($con, $showyearGroupDepartDetailSQL);
+					if (mysqli_num_rows($showyearGroupDepartDetailResult) > 0) {
+						while ($showyearGroupDepartDetailRow = mysqli_fetch_array($showyearGroupDepartDetailResult)) {
+
+							echo '<option value="' . $showyearGroupDepartDetailRow['years_year'] . '">' . $showyearGroupDepartDetailRow['years_year'] . '</option>
+                           ';
+						}
+					} else {
+						echo '
+						<option>NO yearGroup Created Yet' . mysqli_error($con) . '</option>
+            	        ';
+					}
+					?>
+
+				</select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="departmentRequest" name="departmentRequest" class="btn btn-primary" value="request">Request</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal for Financial Clearance -->
+
+<div class="modal fade" id="libraryModal" tabindex="-1" aria-labelledby="libraryModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Library Clearance</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  <label for="libraryYearGroup">Select Year Group</label>
+				<select class="form-control" id="libraryYear" name="libraryYear">
+
+					<?php
+					$showyearGroupLibraryDetailSQL = "SELECT * FROM yearGroup ORDER BY created_date DESC";
+					$showyearGroupLibraryDetailResult = mysqli_query($con, $showyearGroupLibraryDetailSQL);
+					if (mysqli_num_rows($showyearGroupLibraryDetailResult) > 0) {
+						while ($showyearGroupLibraryDetailRow = mysqli_fetch_array($showyearGroupLibraryDetailResult)) {
+
+							echo '<option value="' . $showyearGroupLibraryDetailRow['years_year'] . '">' . $showyearGroupLibraryDetailRow['years_year'] . '</option>
+                           ';
+						}
+					} else {
+						echo '
+						<option>NO yearGroup Created Yet' . mysqli_error($con) . '</option>
+            	        ';
+					}
+					?>
+
+				</select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="libraryRequest" name="libraryRequest" class="btn btn-primary" value="request">Request</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Hall Clearance -->
+
+<div class="modal fade" id="hallModal" tabindex="-1" aria-labelledby="hallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hall Clearance</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  <label for="hallYearGroup">Select Year Group</label>
+				<select class="form-control" id="hallYear" name="hallYear">
+
+					<?php
+					$showyearGrouphallDetailSQL = "SELECT * FROM yearGroup ORDER BY created_date DESC";
+					$showyearGrouphallDetailResult = mysqli_query($con, $showyearGrouphallDetailSQL);
+					if (mysqli_num_rows($showyearGrouphallDetailResult) > 0) {
+						while ($showyearGrouphallDetailRow = mysqli_fetch_array($showyearGrouphallDetailResult)) {
+
+							echo '<option value="' . $showyearGrouphallDetailRow['years_year'] . '">' . $showyearGrouphallDetailRow['years_year'] . '</option>
+                           ';
+						}
+					} else {
+						echo '
+						<option>NO yearGroup Created Yet' . mysqli_error($con) . '</option>
+            	        ';
+					}
+					?>
+
+				</select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="hallRequest" name="hallRequest" class="btn btn-primary" value="request">Request</button>
+      </div>
+    </div>
+  </div>
+</div>

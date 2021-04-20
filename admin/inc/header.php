@@ -31,7 +31,7 @@
                             <li><a href="create-hall.php">Create Hall</a></li>
                             <li><a href="create-department.php">Create Department</a></li>
                             <li><a href="year-group.php">Create Year Group</a></li>
-                            <li><a href="create-clearance-type.php">Create Clearance Type</a></li>
+                            <!--<li><a href="create-clearance-type.php">Create Clearance Type</a></li>-->
                         </ul>
                     </div>
                 </li>

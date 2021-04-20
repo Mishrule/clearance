@@ -25,6 +25,7 @@
                     <li>Create Clearance Type</li>
                 </ul>
             </div>
+
             <div class="row">
                 <!-- Your Profile Views Chart -->
                 <div class="col-lg-12 col-md-12 m-b30">
@@ -32,54 +33,43 @@
                         <div class="wc-title">
                             <h4>Approve Student Clearance</h4>
                         </div>
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4"></div>
+                            <div class="col-md-4 col-lg-4">
+                                <label for="approvedClearanceType">Clearance Type</label>
+                                <select class="custom-select" id="approvedClearanceType" name="approvedClearanceType">
+                                    <option selected>Select Clearance Type</option>
+                                    <option value="Financial Clearance (Including SRC)">Financial Clearance</option>
+                                    <option value="Department Clearance (Departmental Dues)">Department </option>
+                                    <option value="Library Clearance (Lost of Books)">Library</option>
+                                    <option value="Hall Clearance">Hall</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-lg-4">
+                                <label for="approvedClearanceYearGroup">Select Year Group</label>
+                                <select class="form-control" id="approvedClearanceYearGroup" name="approvedClearanceYearGroup">
+                                    <?php
+                                    $showyearGrouphallDetailSQL = "SELECT * FROM yearGroup ORDER BY created_date DESC";
+                                    $showyearGrouphallDetailResult = mysqli_query($con, $showyearGrouphallDetailSQL);
+                                    if (mysqli_num_rows($showyearGrouphallDetailResult) > 0) {
+                                        while ($showyearGrouphallDetailRow = mysqli_fetch_array($showyearGrouphallDetailResult)) {
+
+                                            echo '<option value="' . $showyearGrouphallDetailRow['years_year'] . '">' . $showyearGrouphallDetailRow['years_year'] . '</option>
+                           ';
+                                        }
+                                    } else {
+                                        echo '
+						<option>NO yearGroup Created Yet' . mysqli_error($con) . '</option>
+            	        ';
+                                    }
+                                    ?>
+
+                                </select>
+                            </div>
+                        </div>
                         <div class="widget-inner">
                             <div class="widget-inner">
-                            <table class="table table-responsive">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Student ID</th>
-                                            <th scope="col">Student Name</th>
-                                            <th scope="col">Clearance Type</th>
-                                            <th scope="col">Clearance Status</th>
-                                            
-                                            <th scope="col">Control</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                <?php
-                                // $hallStudentMsg = '';
-                                // $hallStudentID = "5151040051";
-                                // $hallClearanceType = "Hall Clearance";
-                                $approveClearanceStatusSQL = "SELECT DISTINCT student_id, student_name, clearance_type, clearance_status FROM clearance";
-
-                                $approveClearanceStatusResult = mysqli_query($con, $approveClearanceStatusSQL);
-                                    $approveCount = 1;
-                                if (mysqli_num_rows($approveClearanceStatusResult) > 0) {
-                                    while ($approveClearanceStatusRow = mysqli_fetch_array($approveClearanceStatusResult)) {
-                                       
-                                      echo '  <tr>
-                                            <th scope="row">'.$approveCount.'</th>
-                                            <td>'.$approveClearanceStatusRow['student_id'].'</td>
-                                            <td>'.$approveClearanceStatusRow['student_name'].'</td>
-                                            <td>'.$approveClearanceStatusRow['clearance_type'].'</td>
-                                            <td>'.$approveClearanceStatusRow['clearance_status'].'</td>
-                                            <td><a href="#" id="library_clearance_Request" name="library_clearance_Request"  class="btn green radius-xl outline">Approve</a></td>
-                                            
-                                        </tr>
-                                        ';
-                                        $approveCount++;
-                                    }
-                                } else {
-                                    echo '  <tr>
-                                                <th scope="row" colspan="7">No Student Has Requested For Clearance</th>
-                                            </tr>
-                                        ';
-                                }
-                                ?>    
-                                    </tbody>
-                                </table>
-
+                                <div id="showApproveStatus"></div>
                             </div>
                         </div>
                     </div>
@@ -107,27 +97,77 @@
             });
         }
 
+        /*
+                $('#saveHall').click(function() {
+                    let clearanceTitle = $('#clearanceTitle').val();
+                    if (clearanceTitle == '') {
+                        $('#clearanceTitleError').show();
+                    } else {
+                        $('#saveHall').text('Please Wait...');
+                        $('#saveHall').attr('disabled', true);
+                        $.ajax({
+                            url: '../scripts/hallScripts.php',
+                            method: 'POST',
+                            data: {
+                                clearanceTitle
+                            },
+                            dataType: 'json',
+                            success: function(data) {
+                                setTimeout(() => {
+                                    showMessage(data.title, data.text, data.icon)
+                                    $('#saveHall').text('Save Hall');
+                                    $('#saveHall').attr('disabled', false);
+                                    $('#clearanceTitle').val('');
+                                }, 3000);
+                            }
+                        })
+                    }
 
-        $('#saveHall').click(function() {
-            let clearanceTitle = $('#clearanceTitle').val();
-            if (clearanceTitle == '') {
-                $('#clearanceTitleError').show();
-            } else {
-                $('#saveHall').text('Please Wait...');
-                $('#saveHall').attr('disabled', true);
+                });*/
+
+        //============================= Show Status
+        $('#approvedClearanceType').change(function() {
+            let approvedClearanceType = $('#approvedClearanceType').val();
+            let approvedClearanceYearGroup = $('#approvedClearanceYearGroup').val();
+
+            $.ajax({
+                url: '../scripts/approveStudentClearanceScript.php',
+                method: 'POST',
+                data: {
+                    approvedClearanceType,
+                    approvedClearanceYearGroup
+                },
+
+                success: function(data) {
+                    $('#showApproveStatus').html(data);
+                }
+            })
+        })
+
+        $(document).on('click', '.approve', function() {
+            let approveId = $(this).attr('id');
+            let student_index = '5151040051';
+            let approvedClearanceType = $('#approvedClearanceType').val();
+            let approvedClearanceYearGroup = $('#approvedClearanceYearGroup').val();
+
+            if (confirm("Are you sure you want to Approve Clearance\nclick Ok to Approve")) {
                 $.ajax({
-                    url: '../scripts/hallScripts.php',
+                    url: '../scripts/approveStudentClearanceScript.php',
                     method: 'POST',
                     data: {
-                        clearanceTitle
+                        approveId,
+                        student_index,
+                        approvedClearanceType,
+                        approvedClearanceYearGroup
                     },
                     dataType: 'json',
                     success: function(data) {
+                        showMessage(data.title, data.text, data.icon);
                         setTimeout(() => {
-                            showMessage(data.title, data.text, data.icon)
-                            $('#saveHall').text('Save Hall');
-                            $('#saveHall').attr('disabled', false);
-                            $('#clearanceTitle').val('');
+                            window.location.reload();
+                        // $('#saveHall').text('Save Hall');
+                        // $('#saveHall').attr('disabled', false);
+                        // $('#clearanceTitle').val('');
                         }, 3000);
                     }
                 })
