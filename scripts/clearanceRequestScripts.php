@@ -1,6 +1,10 @@
 <?php
     require_once('db.php');
     require_once('datetime.php');
+    
+    
+    $studentid = mysqli_real_escape_string($con, $_POST['hdStudentID']);
+    $studentname = mysqli_real_escape_string($con, $_POST['hdfullName']);
 
     //========Create a financialClearance
     if(isset($_POST['financialRequestBTN'])){
@@ -8,8 +12,7 @@
         $financialClearanceName = mysqli_real_escape_string($con, $_POST['financial_title']);
         $financial_status = mysqli_real_escape_string($con, $_POST['financial_status']);
         $financialYear = mysqli_real_escape_string($con, $_POST['financialYear']);
-        $studentid = "5151040051";
-        $studentname = "Bismark Teye";
+        
 
         $createfinancialClearanceSQL = "INSERT INTO clearance VALUES('','$studentid','$studentname','$financialClearanceName','$financial_status','$financialYear','$DateTime','')";
 
@@ -33,8 +36,8 @@
         $departmentClearanceName = mysqli_real_escape_string($con, $_POST['department_title']);
         $department_status = mysqli_real_escape_string($con, $_POST['department_status']);
         $departmentYear = mysqli_real_escape_string($con, $_POST['departmentYear']);
-        $studentid = "5151040051";
-        $studentname = "Bismark Teye";
+        // $studentid = $login_Session_studentID;
+        // $studentname = hdfullName;
 
         $createdepartmentClearanceSQL = "INSERT INTO clearance VALUES('','$studentid','$studentname','$departmentClearanceName','$department_status','$departmentYear','$DateTime','')";
 
@@ -58,8 +61,8 @@
         $libraryClearanceName = mysqli_real_escape_string($con, $_POST['library_title']);
         $library_status = mysqli_real_escape_string($con, $_POST['library_status']);
         $libraryYear = mysqli_real_escape_string($con, $_POST['libraryYear']);
-        $studentid = "5151040051";
-        $studentname = "Bismark Teye";
+        // $studentid = $login_Session_studentID;
+        // $studentname = hdfullName;
 
         $createlibraryClearanceSQL = "INSERT INTO clearance VALUES('','$studentid','$studentname','$libraryClearanceName','$library_status','$libraryYear','$DateTime','')";
 
@@ -83,8 +86,8 @@
         $hallClearanceName = mysqli_real_escape_string($con, $_POST['hall_title']);
         $hall_status = mysqli_real_escape_string($con, $_POST['hall_status']);
         $hallYear = mysqli_real_escape_string($con, $_POST['hallYear']);
-        $studentid = "5151040051";
-        $studentname = "Bismark Teye";
+        // $studentid = $login_Session_studentID;
+        // $studentname = hdfullName;
 
         $createhallClearanceSQL = "INSERT INTO clearance VALUES('','$studentid','$studentname','$hallClearanceName','$hall_status','$hallYear','$DateTime','')";
 

@@ -42,10 +42,10 @@
                         <li>
                             <a href="clearance-status.php" class="ttr-material-button"><span class="ttr-label">Clearance Status</span></a>
                         </li>
-                        <li>
+                        <!--    <li>
                             <a href="clearance-chit.php" class="ttr-material-button"><span class="ttr-label">Clearance Chit</span></a>
                         </li>
-                     <!--   <li>
+                       <li>
                             <a href="mailbox-read.html" class="ttr-material-button"><span class="ttr-label">Mail Read</span></a>
                         </li> -->
                     </ul>

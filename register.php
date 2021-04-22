@@ -124,7 +124,7 @@
 			</div>
 			
 			';
-			header('Location: login.html');
+			header('Location: index.php');
 			}else{
 				$signUpMessage = '
 			<div class="alert alert-warning alert-dismissible fade show" role="alert">

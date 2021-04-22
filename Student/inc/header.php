@@ -1,4 +1,10 @@
 <?php 
+    include('../session.php');
+    require_once('../scripts/db.php');
+    $sessionSQL = mysqli_query($con, "SELECT * FROM student WHERE student_index='$login_Session_studentID'");
+    $row = mysqli_fetch_array($sessionSQL);
+    $fullName = $row['student_name'];
+    $studentImage = $row['student_image'];
     echo'
     <header class="ttr-header">
     <div class="ttr-header-wrapper">
@@ -22,7 +28,7 @@
             <!-- header left menu start -->
             <ul class="ttr-header-navigation">
                 <li>
-                    <a href="../index.html" class="ttr-material-button ttr-submenu-toggle">HOME</a>
+                    <a href="../index.php" class="ttr-material-button ttr-submenu-toggle">HOME</a>
                 </li>
                 
             </ul>
@@ -108,13 +114,11 @@
                     </div>
                 </li>-->
                 <li>
-                    <a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt="" src="../admin/assets/images/testimonials/pic3.jpg" width="32" height="32"></span></a>
+                    <a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt="" src="../assets/img/faces/'.$studentImage.'" width="32" height="32"></span></a>
                     <div class="ttr-header-submenu">
                         <ul>
-                            <li><a href="user-profile.html">My profile</a></li>
-                            <li><a href="list-view-calendar.html">Activity</a></li>
-                            <li><a href="mailbox.html">Messages</a></li>
-                            <li><a href="../login.html">Logout</a></li>
+                            <li><a href="#"><span id="hdfullName">'.$fullName.'</span></a></li>
+                            <li><a href="./logout.php">Logout</a></li>
                         </ul>
                     </div>
                 </li><!--

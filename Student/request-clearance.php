@@ -28,7 +28,7 @@
 				<div class="col-lg-12 m-b30">
 					<div class="widget-box">
 						<div class="wc-title">
-							<h4>Request for Clearance</h4>
+							<h4>Request for Clearance <span id="hdStudentID"><?php echo $login_Session_studentID;?></span></h4>
 						</div>
 						<div class="widget-inner">
 							<div class="card-courses-list admin-courses">
@@ -69,7 +69,7 @@
 											</li> -->
 											<?php
 											$financialStudentMsg = '';
-											$financialStudentID = "5151040051";
+											$financialStudentID = $login_Session_studentID;
 											$financialClearanceType = "Financial Clearance (Including SRC)";
 											$financialClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$financialStudentID' AND clearance_type = '$financialClearanceType'";
 
@@ -140,7 +140,7 @@
 											</li> -->
 											<?php
 											$departmentStudentMsg = '';
-											$departmentStudentID = "5151040051";
+											$departmentStudentID = $login_Session_studentID;
 											$departmentClearanceType = "Department Clearance (Departmental Dues)";
 											$departmentClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$departmentStudentID' AND clearance_type = '$departmentClearanceType'";
 
@@ -211,7 +211,7 @@
 											</li> -->
 											<?php
 											$libraryStudentMsg = '';
-											$libraryStudentID = "5151040051";
+											$libraryStudentID = $login_Session_studentID;
 											$libraryClearanceType = "Library Clearance (Lost of Books)";
 											$libraryClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$libraryStudentID' AND clearance_type = '$libraryClearanceType'";
 
@@ -283,7 +283,7 @@
 											</li> -->
 											<?php
 											$hallStudentMsg = '';
-											$hallStudentID = "5151040051";
+											$hallStudentID = $login_Session_studentID;
 											$hallClearanceType = "Hall Clearance";
 											$hallClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$hallStudentID' AND clearance_type = '$hallClearanceType'";
 
@@ -340,13 +340,15 @@
 				icon: icon
 			});
 		}
+		var hdfullName = $('#hdfullName').text();
+		var hdStudentID = $('#hdStudentID').text();
 
 		$('#financialRequest').click(function() {
 			let financial_title = $('#financial_clearance_Title').text();
 			let financial_status = 'Pending';
 			let financialRequestBTN = $('#financialRequest').val();
 			let financialYear = $('#financialYear').val();
-			/*alert(financial_title);
+			/*alert(hdStudentID);
 			alert(financial_status);
 			alert(financialRequestBTN);
 			alert(financialYear);*/
@@ -358,7 +360,9 @@
 						financial_title,
 						financial_status,
 						financialRequestBTN,
-						financialYear
+						financialYear,
+						hdfullName,
+						hdStudentID
 					},
 					dataType: 'json',
 					success: function(data) {
@@ -388,7 +392,9 @@
 					department_title,
 					department_status,
 					departmentRequestBTN,
-					departmentYear
+					departmentYear,
+					hdfullName,
+					hdStudentID
 				},
 				dataType: 'json',
 				success: function(data) {
@@ -416,7 +422,9 @@
 					library_title,
 					library_status,
 					libraryRequestBTN,
-					libraryYear
+					libraryYear,
+					hdfullName,
+					hdStudentID
 				},
 				dataType: 'json',
 				success: function(data) {
@@ -445,7 +453,9 @@
 					hall_title,
 					hall_status,
 					hallRequestBTN,
-					hallYear
+					hallYear,
+					hdfullName,
+					hdStudentID
 				},
 				dataType: 'json',
 				success: function(data) {

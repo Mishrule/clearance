@@ -1,16 +1,21 @@
+<?php
+require_once('../scripts/db.php');
+include('../session.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
-<?php require_once('inc/head.php');?>
+<?php require_once('inc/head.php'); ?>
+
 <body class="ttr-opened-sidebar ttr-pinned-sidebar">
-	
+
 	<!-- header start -->
-	<?php require_once('inc/header.php');?>
-	
+	<?php require_once('inc/header.php'); ?>
+
 	<!-- header end -->
 	<!-- Left sidebar menu start -->
-	<?php require_once('inc/aside.php');?>
-	
+	<?php require_once('inc/aside.php'); ?>
+
 	<!-- Left sidebar menu end -->
 
 	<!--Main container start -->
@@ -21,18 +26,38 @@
 				<ul class="db-breadcrumb-list">
 					<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
 					<li>Dashboard</li>
+					<!-- <li><?php //echo  $login_Session_studentID; 
+								?></li> -->
 				</ul>
-			</div>	
+			</div>
 			<!-- Card -->
 			<div class="row">
 				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
-					<div class="widget-card widget-bg1">					 
+					<div class="widget-card widget-bg1">
 						<div class="wc-item">
+							<?php
+							$financialStatus = '';
+							$financialApprove = '';
+							$financeVal = 'Financial Clearance (Including SRC)';
+
+							$financialSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$login_Session_studentID' AND clearance_type='$financeVal'";
+
+							$financialResult = mysqli_query($con, $financialSQL);
+							if (mysqli_num_rows($financialResult) > 0) {
+								while ($financialRow = mysqli_fetch_array($financialResult)) {
+									$financialStatus = $financialRow['clearance_status'];
+									// $financialApprove = $financialRow['approved_date'];
+								}
+							} else {
+								$financialStatus = "Not Requested";
+							}
+							?>
+
 							<h4 class="wc-title">
 								Financial Clearance
 							</h4>
 							<span class="wc-des">
-								Status
+								Status <?php echo $financialStatus; ?>
 							</span>
 							<!-- <span class="wc-stats">
 								$<span class="counter">18</span>M 
@@ -40,25 +65,43 @@
 							<div class="progress wc-progress">
 								<div class="progress-bar" role="progressbar" style="width: 78%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 							</div>
+
 							<span class="wc-progress-bx">
 								<span class="wc-change">
-									Pending
+
 								</span>
 								<span class="wc-number ml-auto">
 									78%
 								</span>
 							</span>
-						</div>				      
+						</div>
 					</div>
 				</div>
+				<?php
+				$departmentStatus = '';
+				$departmentApprove = '';
+				$departmentVal = 'Department Clearance (Departmental Dues)';
+
+				$departmentSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$login_Session_studentID' AND clearance_type='$departmentVal'";
+
+				$departmentResult = mysqli_query($con, $departmentSQL);
+				if (mysqli_num_rows($departmentResult) > 0) {
+					while ($departmentRow = mysqli_fetch_array($departmentResult)) {
+						$departmentStatus = $departmentRow['clearance_status'];
+						// $departmentApprove = $departmentRow['approved_date'];
+					}
+				} else {
+					$departmentStatus = "Not Requested";
+				}
+				?>
 				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
-					<div class="widget-card widget-bg2">					 
+					<div class="widget-card widget-bg2">
 						<div class="wc-item">
 							<h4 class="wc-title">
-								 Department Clearance 
+								Department Clearance
 							</h4>
 							<span class="wc-des">
-								Status
+								Status <?php echo $departmentStatus; ?>
 							</span>
 							<!-- <span class="wc-stats counter">
 								120 
@@ -68,23 +111,40 @@
 							</div>
 							<span class="wc-progress-bx">
 								<span class="wc-change">
-									Pending
+
 								</span>
-								<!-- <span class="wc-number ml-auto">
+								<span class="wc-number ml-auto">
 									88%
-								</span> -->
+								</span>
 							</span>
-						</div>				      
+						</div>
 					</div>
 				</div>
+				<?php
+				$libraryStatus = '';
+				$libraryApprove = '';
+				$libraryVal = 'library Clearance (libraryal Dues)';
+
+				$librarySQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$login_Session_studentID' AND clearance_type='$libraryVal'";
+
+				$libraryResult = mysqli_query($con, $librarySQL);
+				if (mysqli_num_rows($libraryResult) > 0) {
+					while ($libraryRow = mysqli_fetch_array($libraryResult)) {
+						$libraryStatus = $libraryRow['clearance_status'];
+						// $libraryApprove = $libraryRow['approved_date'];
+					}
+				} else {
+					$libraryStatus = "Not Requested";
+				}
+				?>
 				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
-					<div class="widget-card widget-bg3">					 
+					<div class="widget-card widget-bg3">
 						<div class="wc-item">
 							<h4 class="wc-title">
 								Library Clearance
 							</h4>
 							<span class="wc-des">
-								Status
+								Status <?php echo $libraryStatus; ?>
 							</span>
 							<!-- <span class="wc-stats counter">
 								772 
@@ -94,23 +154,40 @@
 							</div>
 							<span class="wc-progress-bx">
 								<span class="wc-change">
-									Pending
+
 								</span>
-								<!-- <span class="wc-number ml-auto">
+								<span class="wc-number ml-auto">
 									65%
-								</span> -->
+								</span>
 							</span>
-						</div>				      
+						</div>
 					</div>
 				</div>
+				<?php
+				$hallStatus = '';
+				$hallApprove = '';
+				$hallVal = 'Hall Clearance';
+
+				$hallSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$login_Session_studentID' AND clearance_type='$hallVal'";
+
+				$hallResult = mysqli_query($con, $hallSQL);
+				if (mysqli_num_rows($hallResult) > 0) {
+					while ($hallRow = mysqli_fetch_array($hallResult)) {
+						$hallStatus = $hallRow['clearance_status'];
+						// $hallApprove = $hallRow['approved_date'];
+					}
+				} else {
+					$hallStatus = "Not Requested";
+				}
+				?>
 				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
-					<div class="widget-card widget-bg4">					 
+					<div class="widget-card widget-bg4">
 						<div class="wc-item">
 							<h4 class="wc-title">
-								Hall Clearance 
+								Hall Clearance
 							</h4>
 							<span class="wc-des">
-								Status
+								Status <?php echo $hallStatus; ?>
 							</span>
 							<!-- <span class="wc-stats counter">
 								350 
@@ -120,26 +197,70 @@
 							</div>
 							<span class="wc-progress-bx">
 								<span class="wc-change">
-									Pending
+									
 								</span>
-								<!-- <span class="wc-number ml-auto">
+								<span class="wc-number ml-auto">
 									90%
-								</span> -->
+								</span>
 							</span>
-						</div>				      
+						</div>
 					</div>
 				</div>
 			</div>
 			<!-- Card END -->
-			<!-- <div class="row">
-				<!-- Your Profile Views Chart 
-				<div class="col-lg-8 m-b30">
+			<div class="row">
+
+				<div class="col-lg-12 m-b30">
 					<div class="widget-box">
 						<div class="wc-title">
-							<h4>Your Profile Views</h4>
+							<h4><?php echo $login_Session_studentID; ?>'s Clearance Activity</h4>
 						</div>
 						<div class="widget-inner">
-							<canvas id="chart" width="100" height="45"></canvas>
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Student ID</th>
+										<th scope="col">Student Name</th>
+										<th scope="col">Clearance Type</th>
+										<th scope="col">Clearance Status</th>
+										<th scope="col">Requested Date</th>
+										<th scope="col">Approved Date</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									$studentStatus = '';
+									$studentApprove = '';
+
+
+									$studentSQL = "SELECT * FROM clearance WHERE student_id='$login_Session_studentID'";
+
+									$studentResult = mysqli_query($con, $studentSQL);
+									$count = 1;
+									if (mysqli_num_rows($studentResult) > 0) {
+										while ($studentRow = mysqli_fetch_array($studentResult)) {
+											echo '
+										<tr>
+											<th scope="row">' . $count . '</th>
+											<td>' . $studentRow['student_id'] . '</td>
+											<td>' . $studentRow['student_name'] . '</td>
+											<td>' . $studentRow['clearance_type'] . '</td>
+											<td>' . $studentRow['clearance_status'] . '</td>
+											<td>' . $studentRow['requested_date'] . '</td>
+											<td>' . $studentRow['approved_date'] . '</td>
+										</tr>
+										';
+											$count++;
+										}
+									} else {
+										$studentStatus = "Not Requested";
+									}
+									?>
+
+
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
@@ -357,13 +478,13 @@
 							<div id="calendar"></div>
 						</div>
 					</div>
-				</div> 
-			</div> -->
+				</div>  -->
+			</div>
 		</div>
 	</main>
 	<div class="ttr-overlay"></div>
 
-	<?php require_once('inc/footerjs.php');?>
+	<?php require_once('inc/footerjs.php'); ?>
 
 </body>
 

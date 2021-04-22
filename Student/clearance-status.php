@@ -19,7 +19,7 @@
 				<h4 class="breadcrumb-title">Clearance Status</h4>
 				<ul class="db-breadcrumb-list">
 					<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-					<li>Clearance Status</li>
+					<li>Clearance Status </li>
 				</ul>
 			</div>	
 			<div class="row">
@@ -27,7 +27,7 @@
 				<div class="col-lg-12 m-b30">
 					<div class="widget-box">
 						<div class="wc-title">
-							<h4>Clearance Status</h4>
+							<h4>Clearance Status for <span id="hdStudentID"><?php echo $login_Session_studentID;?></h4>
 						</div>
 						<div class="widget-inner">
 							<div class="card-courses-list admin-courses">
@@ -68,7 +68,7 @@
 											</li> -->
 											<?php 
 												$financialStudentMsg = '';
-												$financialStudentID = "5151040051";
+												$financialStudentID = $login_Session_studentID;
 												$financialClearanceType = "Financial Clearance (Including SRC)";
 												$financialClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$financialStudentID' AND clearance_type = '$financialClearanceType'";
 
@@ -138,7 +138,7 @@
 												<a href="#" class="btn button-sm green radius-xl">Pending</a>
 											</li> --><?php 
 												$departmentStudentMsg = '';
-												$departmentStudentID = "5151040051";
+												$departmentStudentID = $login_Session_studentID;
 												$departmentClearanceType = "Department Clearance (Departmental Dues)";
 												$departmentClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$departmentStudentID' AND clearance_type = '$departmentClearanceType'";
 
@@ -208,7 +208,7 @@
 												<a href="#" class="btn button-sm green radius-xl">Pending</a>
 											</li> --><?php 
 												$libraryStudentMsg = '';
-												$libraryStudentID = "5151040051";
+												$libraryStudentID = $login_Session_studentID;
 												$libraryClearanceType = "Library Clearance (Lost of Books)";
 												$libraryClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$libraryStudentID' AND clearance_type = '$libraryClearanceType'";
 
@@ -279,7 +279,7 @@
 												<a href="#" class="btn button-sm green radius-xl">Pending</a>
 											</li> --><?php 
 												$hallStudentMsg = '';
-												$hallStudentID = "5151040051";
+												$hallStudentID = $login_Session_studentID;
 												$hallClearanceType = "Hall Clearance";
 												$hallClearanceStatusSQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$hallStudentID' AND clearance_type = '$hallClearanceType'";
 
