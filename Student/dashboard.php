@@ -123,7 +123,7 @@ include('../session.php');
 				<?php
 				$libraryStatus = '';
 				$libraryApprove = '';
-				$libraryVal = 'library Clearance (libraryal Dues)';
+				$libraryVal = 'Library Clearance (Lost of Books)';
 
 				$librarySQL = "SELECT DISTINCT(clearance_status) FROM clearance WHERE student_id='$login_Session_studentID' AND clearance_type='$libraryVal'";
 

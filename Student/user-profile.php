@@ -1,3 +1,40 @@
+<?php
+require_once('../scripts/db.php');
+require_once('../session.php');
+
+	$userSQL = "SELECT * FROM student WHERE student_index = '$login_Session_studentID' ";
+	$userResult = mysqli_query($con, $userSQL);
+	$userRow = mysqli_fetch_array($userResult);
+	$studentName = $userRow['student_name'];
+	$studentPassword = $userRow['student_password'];
+	$studentEmail = $userRow['student_email'];
+	$studentContact = $userRow['student_contact'];
+	$studentYear = $userRow['student_yeargroup'];
+	$studentDepartment = $userRow['student_department'];
+	$studentHall = $userRow['student_hall'];
+	$studentRegisteredDate = $userRow['registered_date'];
+
+	if(isset($_POST['updateBtn'])){
+		$stPassword = mysqli_real_escape_string($con, $_POST['stPassword']);
+		$userUpdateSQL = "UPDATE student SET student_password='$stPassword' WHERE student_index='$login_Session_studentID'";
+		$userUpdateResult = mysqli_query($con, $userUpdateSQL);
+		if($userUpdateResult){
+			echo '
+				<script>
+					alert("Update Successfully");
+				</script>
+			';
+			header("Refresh:1");
+		}else{
+			echo '
+				<script>
+					alert('.mysqli_error($con).');
+				</script>
+			';
+		}
+	}
+	
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,108 +77,50 @@
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Full Name</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="Mark Andre">
+											<input class="form-control" type="text" value="<?php echo $studentName;?>" disabled>
 										</div>
 									</div>
 									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Occupation</label>
+										<label class="col-sm-2 col-form-label">Email</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="CTO">
+											<input class="form-control" type="text" value="<?php echo $studentEmail;?>" disabled>
 										</div>
 									</div>
 									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Company Name</label>
+										<label class="col-sm-2 col-form-label">Contact</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="EduChamp">
-											<span class="help">If you want your invoices addressed to a company. Leave blank to use your full name.</span>
+											<input class="form-control" type="text" value="<?php echo $studentPassword;?>" disabled>
 										</div>
 									</div>
 									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Phone No.</label>
+										<label class="col-sm-2 col-form-label">Year Group</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="+120 012345 6789">
+											<input class="form-control" type="text" value="<?php echo $studentYear;?>" disabled>
 										</div>
 									</div>
 									
-									<div class="seperator"></div>
 									
 									<div class="form-group row">
-										<div class="col-sm-10 ml-auto">
-											<h3>2. Address</h3>
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Address</label>
+										<label class="col-sm-2 col-form-label">Department</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="5-S2-20 Dummy City, UK">
+											<input class="form-control" type="text" value="<?php echo $studentDepartment;?>" disabled>
 										</div>
 									</div>
 									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">City</label>
+										<label class="col-sm-2 col-form-label">Hall</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="US">
+											<input class="form-control" type="text" value="<?php echo $studentHall;?>" disabled>
 										</div>
 									</div>
 									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">State</label>
+										<label class="col-sm-2 col-form-label">Registered Date</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="text" value="California">
+											<input class="form-control" type="text" value="<?php echo $studentRegisteredDate;?>" disabled>
 										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Postcode</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="000702">
-										</div>
-									</div>
-
-									<div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
-
-									<div class="form-group row">
-										<div class="col-sm-10 ml-auto">
-											<h3 class="m-form__section">3. Social Links</h3>
-										</div>
-									</div>
-
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Linkedin</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="www.linkedin.com">
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Facebook</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="www.facebook.com">
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Twitter</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="www.twitter.com">
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-2 col-form-label">Instagram</label>
-										<div class="col-sm-7">
-											<input class="form-control" type="text" value="www.instagram.com">
-										</div>
-									</div>
-								</div>
-								<div class="">
-									<div class="">
-										<div class="row">
-											<div class="col-sm-2">
-											</div>
-											<div class="col-sm-7">
-												<button type="reset" class="btn">Save changes</button>
-												<button type="reset" class="btn-secondry">Cancel</button>
-											</div>
-										</div>
-									</div>
+									</div>	
 								</div>
 							</form>
-							<form class="edit-profile">
+							<form class="edit-profile" action="" method="POST">
 								<div class="">
 									<div class="form-group row">
 										<div class="col-sm-10 ml-auto">
@@ -151,28 +130,28 @@
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">Current Password</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="password" value="">
+											<input class="form-control" type="password" value="<?php echo $studentPassword;?>">
 										</div>
 									</div>
 									<div class="form-group row">
 										<label class="col-sm-2 col-form-label">New Password</label>
 										<div class="col-sm-7">
-											<input class="form-control" type="password" value="">
+											<input class="form-control" type="password" id="stPassword" name="stPassword" required>
 										</div>
 									</div>
-									<div class="form-group row">
+									<!-- <div class="form-group row">
 										<label class="col-sm-2 col-form-label">Re Type Password</label>
 										<div class="col-sm-7">
 											<input class="form-control" type="password" value="">
 										</div>
-									</div>
+									</div> -->
 								</div>
 								<div class="row">
 									<div class="col-sm-2">
 									</div>
 									<div class="col-sm-7">
-										<button type="reset" class="btn">Save changes</button>
-										<button type="reset" class="btn-secondry">Cancel</button>
+										<button type="submit" id="updateBtn" name="updateBtn" value="updateBtn" class="btn">Update Password</button>
+										<!-- <button type="reset" class="btn-secondry">Cancel</button> -->
 									</div>
 								</div>
 									
