@@ -68,7 +68,7 @@ $dzAccessLevel = '';
 					';
 				}
 			}else if($dzAccessLevel == 'Financial Clearance (Including SRC)'){
-			/*	$loginSQL = "SELECT student_index FROM student WHERE student_index='$dzIndex' AND student_password='$dzPassword' AND access_level='$dzAccessLevel'";
+				$loginSQL = "SELECT student_index FROM student WHERE student_index='$dzIndex' AND student_password='$dzPassword' AND access_level='$dzAccessLevel'";
 				$loginResult = mysqli_query($con, $loginSQL);
 				$row = mysqli_fetch_array($loginResult);
 				$count = mysqli_num_rows($loginResult);
@@ -85,7 +85,7 @@ $dzAccessLevel = '';
 						</button>
 					</div>
 					';
-				} */
+				} 
 			}else if($dzAccessLevel == 'Department Clearance (Departmental Dues)'){
 			/*	$loginSQL = "SELECT student_index FROM student WHERE student_index='$dzIndex' AND student_password='$dzPassword' AND access_level='$dzAccessLevel'";
 				$loginResult = mysqli_query($con, $loginSQL);
