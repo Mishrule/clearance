@@ -83,6 +83,12 @@
                         <span class="ttr-label">Add listing</span>
                     </a>
                 </li> -->
+                <li>
+                    <a href="../logout.php" class="ttr-material-button">
+                        <span class="ttr-icon"><i class="ti-home"></i></span>
+                        <span class="ttr-label">Logout</span>
+                    </a>
+                </li> 
                <!-- <li>
                     <a href="#" class="ttr-material-button">
                         <span class="ttr-icon"><i class="ti-user"></i></span>

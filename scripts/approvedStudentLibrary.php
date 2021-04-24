@@ -61,18 +61,18 @@
     //========Update  Approve
     if(isset($_POST['approveId'])){
         $approveId = mysqli_real_escape_string($con, $_POST['approveId']);
-        $student_index = mysqli_real_escape_string($con, $_POST['student_index']);
-        $approvedClearanceType = mysqli_real_escape_string($con, $_POST['approvedClearanceType']);
+        // $student_index = mysqli_real_escape_string($con, $_POST['student_index']);
+        // $approvedClearanceType = mysqli_real_escape_string($con, $_POST['approvedClearanceType']);
         $approvedClearanceYearGroup = mysqli_real_escape_string($con, $_POST['approvedClearanceYearGroup']);
         $appove = "Approved";
 
         $approveMessageArray = array();
         //$approveName = mysqli_real_escape_string($con, $_POST['approveName']);
-        $createapproveSQL = "UPDATE clearance SET clearance_status='$appove', approved_date='$DateTime' WHERE clearance_id='$approveId' AND student_id='$student_index' AND clearance_Type='$approvedClearanceType' AND year_group='$approvedClearanceYearGroup'";
+        $createapproveSQL = "UPDATE clearance SET clearance_status='$appove', approved_date='$DateTime' WHERE clearance_id='$approveId' AND year_group='$approvedClearanceYearGroup'";
         $createapproveResult = mysqli_query($con, $createapproveSQL);
         if($createapproveResult){
             $approveMessageArray['title'] = "Success";
-            $approveMessageArray['text'] = $student_index." Clearance is Approved";
+            $approveMessageArray['text'] = "Clearance is Approved";
             $approveMessageArray['icon'] = "success";
         }else{
             $approveMessageArray['title'] = "Error";

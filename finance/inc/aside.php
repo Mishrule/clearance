@@ -4,7 +4,7 @@
     <div class="ttr-sidebar-wrapper content-scroll">
         <!-- side menu logo start -->
         <div class="ttr-sidebar-logo">
-            <a href="#"><img alt="" src="assets/images/logo.png" width="122" height="27"></a>
+            <a href="#"><img alt="" src="../assets/images/logo.png" width="122" height="27"></a>
             <!-- <div class="ttr-sidebar-pin-button" title="Pin/Unpin Menu">
                 <i class="material-icons ttr-fixed-icon">gps_fixed</i>
                 <i class="material-icons ttr-not-fixed-icon">gps_not_fixed</i>
@@ -49,7 +49,14 @@
                             <a href="mailbox-read.html" class="ttr-material-button"><span class="ttr-label">Mail Read</span></a>
                         </li> -->
                     </ul>
-                </li> <!--
+                </li>
+                <li>
+                    <a href="../logout.php" class="ttr-material-button">
+                        <span class="ttr-icon"><i class="ti-home"></i></span>
+                        <span class="ttr-label">Logout</span>
+                    </a>
+                </li> 
+                <!--
                 <li>
                     <a href="#" class="ttr-material-button">
                         <span class="ttr-icon"><i class="ti-calendar"></i></span>
