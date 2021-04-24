@@ -144,18 +144,18 @@
 
         $(document).on('click', '.approve', function() {
             let approveId = $(this).attr('id');
-            let student_index = '5151040051';
-            let searchStudent = $('#searchStudent').val();
+            // let student_index = '5151040051';
+            // let searchStudent = $('#searchStudent').val();
             let approvedClearanceYearGroup = $('#approvedClearanceYearGroup').val();
 
             if (confirm("Are you sure you want to Approve Clearance\nclick Ok to Approve")) {
                 $.ajax({
-                    url: '../scripts/approveStudentClearanceScript.php',
+                    url: '../scripts/searchStudentScript.php',
                     method: 'POST',
                     data: {
                         approveId,
-                        student_index,
-                        searchStudent,
+                        // student_index,
+                        // searchStudent,
                         approvedClearanceYearGroup
                     },
                     dataType: 'json',

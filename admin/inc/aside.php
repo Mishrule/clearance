@@ -93,8 +93,8 @@
                         <li>
                             <a href="create-user.php" class="ttr-material-button"><span class="ttr-label">Create User</span></a>
                         </li>
-                        <li>
-                            <a href="teacher-profile.html" class="ttr-material-button"><span class="ttr-label">Manage User</span></a>
+                       <li>
+                            <a href="../logout.php" class="ttr-material-button"><span class="ttr-label">Logout</span></a>
                         </li>
                     </ul>
                 </li>

@@ -1,4 +1,10 @@
 <?php 
+    include('../adminSession.php');
+    require_once('../scripts/db.php');
+    $sessionSQL = mysqli_query($con, "SELECT * FROM account WHERE staff_id='$login_Session_staffID'");
+    $row = mysqli_fetch_array($sessionSQL);
+    $fullName = $row['staff_name'];
+    // $staffImage = $row['staff_image'];
     echo'
     <header class="ttr-header">
     <div class="ttr-header-wrapper">
@@ -22,7 +28,7 @@
             <!-- header left menu start -->
             <ul class="ttr-header-navigation">
                 <li>
-                    <a href="../index.html" class="ttr-material-button ttr-submenu-toggle">HOME</a>
+                    <a href="../index.php" class="ttr-material-button ttr-submenu-toggle">HOME</a>
                 </li>
                 <li>
                     <a href="#" class="ttr-material-button ttr-submenu-toggle">SETTINGS <i class="fa fa-angle-down"></i></a>
@@ -34,6 +40,9 @@
                             <!--<li><a href="create-clearance-type.php">Create Clearance Type</a></li>-->
                         </ul>
                     </div>
+                </li>
+                <li>
+                    <a href="#" class="ttr-material-button ttr-submenu-toggle"><marquee>Welcome: '.$fullName.'</marquee></a>
                 </li>
             </ul>
             <!-- header left menu end -->
@@ -117,7 +126,7 @@
                         </div>
                     </div>
                 </li>-->
-                <li>
+                <!--   <li>
                     <a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt="" src="./assets/images/testimonials/pic3.jpg" width="32" height="32"></span></a>
                     <div class="ttr-header-submenu">
                         <ul>
@@ -127,7 +136,7 @@
                             <li><a href="../login.html">Logout</a></li>
                         </ul>
                     </div>
-                </li><!--
+                </li>
                 <li class="ttr-hide-on-mobile">
                     <a href="#" class="ttr-material-button"><i class="ti-layout-grid3-alt"></i></a>
                     <div class="ttr-header-submenu ttr-extra-menu">
