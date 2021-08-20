@@ -64,13 +64,13 @@
         $approveMessageArray = array();
         $approveId = mysqli_real_escape_string($con, $_POST['approveId']);
         // $student_index = mysqli_real_escape_string($con, $_POST['student_index']);
-        // $approvedClearance_Type = mysqli_real_escape_string($con, $_POST['approvedClearanceType']);
+        $getName = mysqli_real_escape_string($con, $_POST['getName']);
         $approvedClearanceYearGroup = mysqli_real_escape_string($con, $_POST['approvedClearanceYearGroup']);
         $appove = "Approved";
 
         
         //$approveName = mysqli_real_escape_string($con, $_POST['approveName']);
-        $createapproveSQL = "UPDATE clearance SET clearance_status='$appove', approved_date='$DateTime' WHERE clearance_id='$approveId' AND year_group='$approvedClearanceYearGroup'";
+        $createapproveSQL = "UPDATE clearance SET clearance_status='$appove', approved_date='$DateTime', approved_by='$getName' WHERE clearance_id='$approveId' AND year_group='$approvedClearanceYearGroup'";
         $createapproveResult = mysqli_query($con, $createapproveSQL);
         // print_r($createapproveSQL);
        if($createapproveResult){

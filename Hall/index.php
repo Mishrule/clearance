@@ -24,28 +24,41 @@
 				</ul>
 			</div>	
 			<!-- Card -->
+			<!-- Card -->
 			<div class="row">
 				<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
 					<div class="widget-card widget-bg1">					 
 						<div class="wc-item">
 							<h4 class="wc-title">
-								Total Frofit
+								Total Halls
 							</h4>
+							<?php
+								$hallMsg = ''; 
+								$hallSQL = "SELECT COUNT(*) AS total FROM hall";
+								$hallResult = mysqli_query($con, $hallSQL);
+								if(mysqli_num_rows($hallResult)>0){
+									while($hallRow = mysqli_fetch_array($hallResult)){
+										$hallMsg = $hallRow['total'];
+									}
+								}else{
+									$hallMsg = '0';
+								}
+							?>
 							<span class="wc-des">
-								All Customs Value
+								Created Halls
 							</span>
 							<span class="wc-stats">
-								$<span class="counter">18</span>M 
+								<span class="counter"><?php echo $hallMsg;?></span> 
 							</span>		
 							<div class="progress wc-progress">
-								<div class="progress-bar" role="progressbar" style="width: 78%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar" role="progressbar" style="width: <?php echo $hallMsg;?>%;" aria-valuenow="<?php echo $hallMsg;?>" aria-valuemin="0" aria-valuemax="<?php echo $hallMsg;?>"></div>
 							</div>
 							<span class="wc-progress-bx">
 								<span class="wc-change">
-									Change
+									Halls
 								</span>
 								<span class="wc-number ml-auto">
-									78%
+								<?php echo $hallMsg;?>%
 								</span>
 							</span>
 						</div>				      
@@ -55,23 +68,35 @@
 					<div class="widget-card widget-bg2">					 
 						<div class="wc-item">
 							<h4 class="wc-title">
-								 New Feedbacks
+								 Registered Students
 							</h4>
 							<span class="wc-des">
-								Customer Review
+								Total Student
 							</span>
+							<?php
+								$studentMsg = ''; 
+								$studentSQL = "SELECT COUNT(*) AS total FROM student";
+								$studentResult = mysqli_query($con, $studentSQL);
+								if(mysqli_num_rows($studentResult)>0){
+									while($studentRow = mysqli_fetch_array($studentResult)){
+										$studentMsg = $studentRow['total'];
+									}
+								}else{
+									$studentMsg = '0';
+								}
+							?>
 							<span class="wc-stats counter">
-								120 
+							<?php echo $studentMsg;?> 
 							</span>		
 							<div class="progress wc-progress">
-								<div class="progress-bar" role="progressbar" style="width: 88%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar" role="progressbar" style="width: <?php echo $studentMsg;?>%;" aria-valuenow="<?php echo $studentMsg;?>" aria-valuemin="0" aria-valuemax="<?php echo $studentMsg;?>"></div>
 							</div>
 							<span class="wc-progress-bx">
 								<span class="wc-change">
-									Change
+									Total Registered Students
 								</span>
 								<span class="wc-number ml-auto">
-									88%
+								<?php echo $studentMsg;?>%
 								</span>
 							</span>
 						</div>				      
@@ -81,23 +106,35 @@
 					<div class="widget-card widget-bg3">					 
 						<div class="wc-item">
 							<h4 class="wc-title">
-								New Orders 
+								Department 
 							</h4>
 							<span class="wc-des">
-								Fresh Order Amount 
+								Total Department 
 							</span>
+							<?php
+								$departmentMsg = ''; 
+								$departmentSQL = "SELECT COUNT(*) AS total FROM department";
+								$departmentResult = mysqli_query($con, $departmentSQL);
+								if(mysqli_num_rows($departmentResult)>0){
+									while($departmentRow = mysqli_fetch_array($departmentResult)){
+										$departmentMsg = $departmentRow['total'];
+									}
+								}else{
+									$departmentMsg = '0';
+								}
+							?>
 							<span class="wc-stats counter">
-								772 
+							<?php echo $departmentMsg;?> 
 							</span>		
 							<div class="progress wc-progress">
-								<div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar" role="progressbar" style="width: <?php echo $departmentMsg;?>%;" aria-valuenow="<?php echo $departmentMsg;?>" aria-valuemin="0" aria-valuemax="<?php echo $departmentMsg;?>"></div>
 							</div>
 							<span class="wc-progress-bx">
 								<span class="wc-change">
-									Change
+									Registered Department
 								</span>
 								<span class="wc-number ml-auto">
-									65%
+								<?php echo $departmentMsg;?>%
 								</span>
 							</span>
 						</div>				      
@@ -107,23 +144,35 @@
 					<div class="widget-card widget-bg4">					 
 						<div class="wc-item">
 							<h4 class="wc-title">
-								New Users 
+								User Account 
 							</h4>
 							<span class="wc-des">
-								Joined New User
+								Created Users
 							</span>
+							<?php
+								$accountMsg = ''; 
+								$accountSQL = "SELECT COUNT(*) AS total FROM account";
+								$accountResult = mysqli_query($con, $accountSQL);
+								if(mysqli_num_rows($accountResult)>0){
+									while($accountRow = mysqli_fetch_array($accountResult)){
+										$accountMsg = $accountRow['total'];
+									}
+								}else{
+									$accountMsg = '0';
+								}
+							?>
 							<span class="wc-stats counter">
-								350 
+							<?php echo $accountMsg;?> 
 							</span>		
 							<div class="progress wc-progress">
-								<div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="progress-bar" role="progressbar" style="width: <?php echo $accountMsg;?>%;" aria-valuenow="<?php echo $accountMsg;?>" aria-valuemin="0" aria-valuemax="<?php echo $accountMsg;?>"></div>
 							</div>
 							<span class="wc-progress-bx">
 								<span class="wc-change">
-									Change
+									Users
 								</span>
 								<span class="wc-number ml-auto">
-									90%
+								<?php echo $accountMsg;?>%
 								</span>
 							</span>
 						</div>				      
@@ -151,67 +200,48 @@
 						</div>
 						<div class="widget-inner">
 							<div class="noti-box-list">
+							
 								<ul>
-									<li>
-										<span class="notification-icon dashbg-gray">
-											<i class="fa fa-check"></i>
-										</span>
-										<span class="notification-text">
-											<span>Sneha Jogi</span> sent you a message.
-										</span>
-										<span class="notification-time">
-											<a href="#" class="fa fa-close"></a>
-											<span> 02:14</span>
-										</span>
-									</li>
-									<li>
-										<span class="notification-icon dashbg-yellow">
-											<i class="fa fa-shopping-cart"></i>
-										</span>
-										<span class="notification-text">
-											<a href="#">Your order is placed</a> sent you a message.
-										</span>
-										<span class="notification-time">
-											<a href="#" class="fa fa-close"></a>
-											<span> 7 Min</span>
-										</span>
-									</li>
-									<li>
-										<span class="notification-icon dashbg-red">
-											<i class="fa fa-bullhorn"></i>
-										</span>
-										<span class="notification-text">
-											<span>Your item is shipped</span> sent you a message.
-										</span>
-										<span class="notification-time">
-											<a href="#" class="fa fa-close"></a>
-											<span> 2 May</span>
-										</span>
-									</li>
-									<li>
-										<span class="notification-icon dashbg-green">
-											<i class="fa fa-comments-o"></i>
-										</span>
-										<span class="notification-text">
-											<a href="#">Sneha Jogi</a> sent you a message.
-										</span>
-										<span class="notification-time">
-											<a href="#" class="fa fa-close"></a>
-											<span> 14 July</span>
-										</span>
-									</li>
-									<li>
-										<span class="notification-icon dashbg-primary">
-											<i class="fa fa-file-word-o"></i>
-										</span>
-										<span class="notification-text">
-											<span>Sneha Jogi</span> sent you a message.
-										</span>
-										<span class="notification-time">
-											<a href="#" class="fa fa-close"></a>
-											<span> 15 Min</span>
-										</span>
-									</li>
+								<?php
+									$notificationMsg = ''; 
+									$notificationSQL = "SELECT * FROM clearance ORDER BY requested_date DESC LIMIT 5";
+									$notificationResult = mysqli_query($con, $notificationSQL);
+									if(mysqli_num_rows($notificationResult)>0){
+										while($notificationRow = mysqli_fetch_array($notificationResult)){
+											echo '
+											<li>
+												<span class="notification-icon dashbg-gray">
+													<i class="fa fa-check"></i>
+												</span>
+												<span class="notification-text">
+													<span>'.$notificationRow['student_id'].'</span> '.$notificationRow['clearance_status'].'
+												</span>
+												<span class="notification-time">
+													<a href="#" class="fa fa-close"></a>
+													<span>'. $notificationRow['requested_date'].'</span>
+												</span>
+											</li>
+											'; 
+										}
+									}else{
+										echo '
+											<li>
+												<span class="notification-icon dashbg-gray">
+													<i class="fa fa-check"></i>
+												</span>
+												<span class="notification-text">
+													<span>'.mysqli_error($con).'</span> 
+												</span>
+												<span class="notification-time">
+													<a href="#" class="fa fa-close"></a>
+													<span></span>
+												</span>
+											</li>
+											'; 
+									}
+								?>
+									
+									
 								</ul>
 							</div>
 						</div>
@@ -220,71 +250,47 @@
 				<div class="col-lg-6 m-b30">
 					<div class="widget-box">
 						<div class="wc-title">
-							<h4>New Users</h4>
+							<h4>Last 5 Registered Students</h4>
 						</div>
 						<div class="widget-inner">
 							<div class="new-user-list">
 								<ul>
-									<li>
-										<span class="new-users-pic">
-											<img src="assets/images/testimonials/pic1.jpg" alt=""/>
-										</span>
-										<span class="new-users-text">
-											<a href="#" class="new-users-name">Anna Strong </a>
-											<span class="new-users-info">Visual Designer,Google Inc </span>
-										</span>
-										<span class="new-users-btn">
-											<a href="#" class="btn button-sm outline">Follow</a>
-										</span>
-									</li>
-									<li>
-										<span class="new-users-pic">
-											<img src="assets/images/testimonials/pic2.jpg" alt=""/>
-										</span>
-										<span class="new-users-text">
-											<a href="#" class="new-users-name"> Milano Esco </a>
-											<span class="new-users-info">Product Designer, Apple Inc </span>
-										</span>
-										<span class="new-users-btn">
-											<a href="#" class="btn button-sm outline">Follow</a>
-										</span>
-									</li>
-									<li>
-										<span class="new-users-pic">
-											<img src="assets/images/testimonials/pic1.jpg" alt=""/>
-										</span>
-										<span class="new-users-text">
-											<a href="#" class="new-users-name">Nick Bold  </a>
-											<span class="new-users-info">Web Developer, Facebook Inc </span>
-										</span>
-										<span class="new-users-btn">
-											<a href="#" class="btn button-sm outline">Follow</a>
-										</span>
-									</li>
-									<li>
-										<span class="new-users-pic">
-											<img src="assets/images/testimonials/pic2.jpg" alt=""/>
-										</span>
-										<span class="new-users-text">
-											<a href="#" class="new-users-name">Wiltor Delton </a>
-											<span class="new-users-info">Project Manager, Amazon Inc </span>
-										</span>
-										<span class="new-users-btn">
-											<a href="#" class="btn button-sm outline">Follow</a>
-										</span>
-									</li>
-									<li>
-										<span class="new-users-pic">
-											<img src="assets/images/testimonials/pic3.jpg" alt=""/>
-										</span>
-										<span class="new-users-text">
-											<a href="#" class="new-users-name">Nick Stone </a>
-											<span class="new-users-info">Project Manager, Amazon Inc  </span>
-										</span>
-										<span class="new-users-btn">
-											<a href="#" class="btn button-sm outline">Follow</a>
-										</span>
-									</li>
+								<?php
+								$studentMsg = ''; 
+								$studentSQL = "SELECT * FROM student ORDER BY registered_date DESC LIMIT 5";
+								$studentResult = mysqli_query($con, $studentSQL);
+								if(mysqli_num_rows($studentResult)>0){
+									while($studentRow = mysqli_fetch_array($studentResult)){
+										echo '
+										<li>
+											<span class="new-users-pic">
+												<img src="../assets/img/faces/'.$studentRow['student_image'].'" alt=""/>
+											</span>
+											<span class="new-users-text">
+												<a href="#" class="new-users-name">'.$studentRow['student_index'].' </a>
+												<span class="new-users-info">'.$studentRow['student_department'].' </span>
+											</span>
+											
+										</li>
+										';
+									}
+								}else{
+									echo '
+										<li>
+											<span class="new-users-pic">
+												
+											</span>
+											<span class="new-users-text">
+												<a href="#" class="new-users-name">'.mysqli_error($con).' </a>
+												<span class="new-users-info"> </span>
+											</span>
+											
+										</li>
+										';
+								}
+							?>
+									
+									
 								</ul>
 							</div>
 						</div>
@@ -298,51 +304,42 @@
 						<div class="widget-inner">
 							<div class="orders-list">
 								<ul>
-									<li>
-										<span class="orders-title">
-											<a href="#" class="orders-title-name">Anna Strong </a>
-											<span class="orders-info">Order #02357 | Date 12/08/2019</span>
-										</span>
-										<span class="orders-btn">
-											<a href="#" class="btn button-sm red">Unpaid</a>
-										</span>
-									</li>
-									<li>
-										<span class="orders-title">
-											<a href="#" class="orders-title-name">Revenue</a>
-											<span class="orders-info">Order #02357 | Date 12/08/2019</span>
-										</span>
-										<span class="orders-btn">
-											<a href="#" class="btn button-sm red">Unpaid</a>
-										</span>
-									</li>
-									<li>
-										<span class="orders-title">
-											<a href="#" class="orders-title-name">Anna Strong </a>
-											<span class="orders-info">Order #02357 | Date 12/08/2019</span>
-										</span>
-										<span class="orders-btn">
-											<a href="#" class="btn button-sm green">Paid</a>
-										</span>
-									</li>
-									<li>
-										<span class="orders-title">
-											<a href="#" class="orders-title-name">Revenue</a>
-											<span class="orders-info">Order #02357 | Date 12/08/2019</span>
-										</span>
-										<span class="orders-btn">
-											<a href="#" class="btn button-sm green">Paid</a>
-										</span>
-									</li>
-									<li>
-										<span class="orders-title">
-											<a href="#" class="orders-title-name">Anna Strong </a>
-											<span class="orders-info">Order #02357 | Date 12/08/2019</span>
-										</span>
-										<span class="orders-btn">
-											<a href="#" class="btn button-sm green">Paid</a>
-										</span>
-									</li>
+								<?php
+								$staffMsg = ''; 
+								$staffSQL = "SELECT * FROM account ORDER BY registered_date DESC LIMIT 5";
+								$staffResult = mysqli_query($con, $staffSQL);
+								if(mysqli_num_rows($staffResult)>0){
+									while($staffRow = mysqli_fetch_array($staffResult)){
+										echo '
+										
+										<li>
+											<span class="orders-title">
+												<a href="#" class="orders-title-name">'.$staffRow['staff_name'].' </a>
+												<span class="orders-info">'.$staffRow['staff_contact'].' | Date '.$staffRow['registered_date'].'</span>
+											</span>
+											<span class="orders-btn">
+												
+											</span>
+										</li>
+										';
+									}
+								}else{
+									echo '
+										<li>
+											<span class="new-users-pic">
+												
+											</span>
+											<span class="new-users-text">
+												<a href="#" class="new-users-name">'.mysqli_error($con).' </a>
+												<span class="new-users-info"> </span>
+											</span>
+											
+										</li>
+										';
+								}
+							?>
+									
+									
 								</ul>
 							</div>
 						</div>

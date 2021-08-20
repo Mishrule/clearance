@@ -1,7 +1,7 @@
 <?php 
     echo '
     <!-- External JavaScripts -->
-    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/jquery.min.js"></script> 
     <script src="./assets/vendors/bootstrap/js/popper.min.js"></script>
     <script src="./assets/vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="./assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
@@ -21,7 +21,28 @@
     <script src="./assets/vendors/calendar/fullcalendar.js"></script>
     <script src="./assets/vendors/switcher/switcher.js"></script>
     <script src="./assets/js/showNofication.js"></script>
-    <script>
+    <script src="./assets/js/datatables.js"></script>
+<!--
+    <script src="./assets/js/datatablesjs/jquery-3.5.1.js"></script> -->
+    <script src="./assets/js/datatablesjs/jquery.dataTables.min.js"></script>
+    <script src="./assets/js/datatablesjs/dataTables.buttons.min.js"></script> 
+    <script src="./assets/js/datatablesjs/jszip.min.js"></script>
+    <script src="./assets/js/datatablesjs/pdfmake.min.js"></script>
+    <script src="./assets/js/datatablesjs/vfs_fonts.js"></script>
+    <script src="./assets/js/datatablesjs/buttons.html5.min.js"></script>
+    <script src="./assets/js/datatablesjs/buttons.print.min.js"></script>
+
+
+    
+    
+     
+     
+      
+       
+         
+        
+
+   <script>
       $(document).ready(function() {
         
         $("#calendar").fullCalendar({

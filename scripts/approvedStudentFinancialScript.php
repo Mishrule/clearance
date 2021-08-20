@@ -61,8 +61,7 @@
     //========Update  Approve
     if(isset($_POST['approveId'])){
         $approveId = mysqli_real_escape_string($con, $_POST['approveId']);
-        // $student_index = mysqli_real_escape_string($con, $_POST['student_index']);
-        // $approvedClearanceType = mysqli_real_escape_string($con, $_POST['approvedClearanceType']);
+
         $approvedClearanceYearGroup = mysqli_real_escape_string($con, $_POST['approvedClearanceYearGroup']);
         $appove = "Approved";
 

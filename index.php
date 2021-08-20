@@ -205,7 +205,7 @@ $dzAccessLevel = '';
 		<!-- <div id="loading-icon-bx"></div> -->
 		<div class="account-form">
 			<div class="account-head" style="background-image:url(assets/images/background/bg2.jpg);">
-				<a href="index.html"><img src="assets/images/logo-white-2.png" alt=""></a>
+				<a href="index.php"><img src="assets/images/logo-white-2.png" alt=""></a>
 			</div>
 			<div class="account-form-inner">
 				<div class="account-container">
@@ -248,26 +248,15 @@ $dzAccessLevel = '';
 							<div class="col-lg-12">
 								<div class="form-group form-forget">
 									<div class="custom-control custom-checkbox">
-										<!-- <input type="checkbox" class="custom-control-input"
-											id="customControlAutosizing">
-										<label class="custom-control-label" for="customControlAutosizing">Remember
-											me</label> -->
+										
 									</div>
-									<!-- <a href="forget-password.html" class="ml-auto">Forgot Password?</a> -->
+									
 								</div>
 							</div>
 							<div class="col-lg-12 col-md-12 m-b30">
 								<button name="submit" type="submit" value="Submit" class="btn button-md col-md-12">Login</button>
 							</div>
-							<!-- <div class="col-lg-12">
-								<h6>Login with Social media</h6>
-								<div class="d-flex">
-									<a class="btn flex-fill m-r5 facebook" href="#"><i
-											class="fa fa-facebook"></i>Facebook</a>
-									<a class="btn flex-fill m-l5 google-plus" href="#"><i
-											class="fa fa-google-plus"></i>Google Plus</a>
-								</div>
-							</div> -->
+							
 						</div>
 					</form>
 				</div>

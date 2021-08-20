@@ -143,7 +143,7 @@
 
         $(document).on('click', '.approve', function() {
             let approveId = $(this).attr('id');
-            // let student_index = '5151040051';
+            let getName = $('#getName').text();;
             // let approvedClearanceType = $('#approvedClearanceType').val();
             let approvedClearanceYearGroup = $('#approvedClearanceYearGroup').val();
 
@@ -153,7 +153,7 @@
                     method: 'POST',
                     data: {
                         approveId,
-                        // student_index,
+                        getName,
                         // approvedClearanceType,
                         approvedClearanceYearGroup
                     },

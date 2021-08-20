@@ -45,7 +45,12 @@
         <!-- STYLESHEETS ============================================= -->
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
         <link rel="stylesheet" type="text/css" href="./assets/css/dashboard.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/datatables.css">
         <link class="skin" rel="stylesheet" type="text/css" href="./assets/css/color/color-1.css">
+
+
+        <link class="skin" rel="stylesheet" type="text/css" href="./assets/css/datatablecss/buttons.dataTables.min.css">
+        <link class="skin" rel="stylesheet" type="text/css" href="./assets/css/datatablecss/buttons.dataTables.min.css">
         
     </head>
     ';

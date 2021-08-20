@@ -31,7 +31,7 @@
                     <a href="index.php" class="ttr-material-button ttr-submenu-toggle">HOME</a>
                 </li>
                 <li>
-                    <a href="#" class="ttr-material-button ttr-submenu-toggle"><marquee>Welcome: '.$fullName.'</marquee></a>
+                    <a href="#" class="ttr-material-button ttr-submenu-toggle"><marquee>Welcome: <span id="getName">'.$fullName.'</span></marquee></a>
                 </li>
                
             </ul>

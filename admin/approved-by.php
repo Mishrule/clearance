@@ -19,10 +19,10 @@
     <main class="ttr-wrapper">
         <div class="container-fluid">
             <div class="db-breadcrumb">
-                <h4 class="breadcrumb-title">Create Clearance Type</h4>
+                <h4 class="breadcrumb-title">Approved By</h4>
                 <ul class="db-breadcrumb-list">
                     <li><a href="index.php"><i class="fa fa-home"></i>Home</a></li>
-                    <li>Create Clearance Type</li>
+                    <li>Clearance Data</li>
                 </ul>
             </div>
 
@@ -31,38 +31,58 @@
                 <div class="col-lg-12 col-md-12 m-b30">
                     <div class="widget-box">
                         <div class="wc-title">
-                            <h4>Approve Student Clearance</h4>
+                            <h4>Clearance Info</h4>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 col-lg-4"></div>
-                            <div class="col-md-4 col-lg-4">
-                                <label for="approvedClearanceType">Clearance Type</label>
-                                <select class="custom-select" id="approvedClearanceType" name="approvedClearanceType">
-                                    <option selected>Select Clearance Type</option>
-                                    <option value="Hall Clearance">Hall Clearance</option>
-                                </select>
+                            <!-- <div class="col-md-1"></div> -->
+                            <div class="col-md-11 m-3">
+                            <table id="clearinfo">
+								<thead>
+									<th scope="col">StudentId</th>
+									<th scope="col">Status</th>
+									<th scope="col">Approved By</th>
+									<th scope="col">Requested Date</th>
+									<th scope="col">Approved By</th>
+								</thead>
+							    <?php
+									$notificationMsg = ''; 
+									$notificationSQL = "SELECT * FROM clearance ORDER BY requested_date DESC LIMIT 5";
+									$notificationResult = mysqli_query($con, $notificationSQL);
+									if(mysqli_num_rows($notificationResult)>0){
+										while($notificationRow = mysqli_fetch_array($notificationResult)){
+											echo '
+											<tr>
+												<td class="notification-text">
+												'.$notificationRow['student_id'].'
+												</td>
+												<td class="notification-text">
+													'.$notificationRow['clearance_status'].'
+												</td>
+												<td class="notification-time">
+													'. $notificationRow['approved_by'].'
+												</td>
+												<td class="notification-time">
+													 '. $notificationRow['requested_date'].'
+												</td>
+												<td class="notification-time">
+													'. $notificationRow['approved_date'].'
+												</td>
+											</tr>
+											'; 
+										}
+									}else{
+										echo '
+											<td class="notification-time">
+												'. mysqli_error($con).'
+											</td>
+											
+											'; 
+									}
+								?>
+						</table>
                             </div>
-                            <div class="col-md-4 col-lg-4">
-                                <label for="approvedClearanceYearGroup">Select Year Group</label>
-                                <select class="form-control" id="approvedClearanceYearGroup" name="approvedClearanceYearGroup">
-                                    <?php
-                                    $showyearGrouphallDetailSQL = "SELECT * FROM yearGroup ORDER BY created_date DESC";
-                                    $showyearGrouphallDetailResult = mysqli_query($con, $showyearGrouphallDetailSQL);
-                                    if (mysqli_num_rows($showyearGrouphallDetailResult) > 0) {
-                                        while ($showyearGrouphallDetailRow = mysqli_fetch_array($showyearGrouphallDetailResult)) {
-
-                                            echo '<option value="' . $showyearGrouphallDetailRow['years_year'] . '">' . $showyearGrouphallDetailRow['years_year'] . '</option>
-                           ';
-                                        }
-                                    } else {
-                                        echo '
-						<option>NO yearGroup Created Yet' . mysqli_error($con) . '</option>
-            	        ';
-                                    }
-                                    ?>
-
-                                </select>
-                            </div>
+                            <div class="col-md-1"></div>
+                        
                         </div>
                         <div class="widget-inner">
                             <div class="widget-inner">
@@ -123,16 +143,18 @@
                 });*/
 
         //============================= Show Status
-        $('#approvedClearanceType').change(function() {
-            let approvedClearanceType = $('#approvedClearanceType').val();
+        $('#searchStudent').keyup(function() {
+            let searchStudent = $('#searchStudent').val();
             let approvedClearanceYearGroup = $('#approvedClearanceYearGroup').val();
+            
 
             $.ajax({
-                url: '../scripts/approveStudentClearanceScript.php',
+                url: '../scripts/searchStudentScript.php',
                 method: 'POST',
                 data: {
-                    approvedClearanceType,
-                    approvedClearanceYearGroup
+                    searchStudent,
+                    approvedClearanceYearGroup,
+                    
                 },
 
                 success: function(data) {
@@ -143,18 +165,18 @@
 
         $(document).on('click', '.approve', function() {
             let approveId = $(this).attr('id');
-            let getName = $('#getName').text();;
-            // let approvedClearanceType = $('#approvedClearanceType').val();
+            // let student_index = '5151040051';
+            // let searchStudent = $('#searchStudent').val();
             let approvedClearanceYearGroup = $('#approvedClearanceYearGroup').val();
 
             if (confirm("Are you sure you want to Approve Clearance\nclick Ok to Approve")) {
                 $.ajax({
-                    url: '../scripts/approveStudentClearanceScript.php',
+                    url: '../scripts/searchStudentScript.php',
                     method: 'POST',
                     data: {
                         approveId,
-                        getName,
-                        // approvedClearanceType,
+                        // student_index,
+                        // searchStudent,
                         approvedClearanceYearGroup
                     },
                     dataType: 'json',
@@ -170,6 +192,16 @@
                 })
             }
 
-        })
+        });
+        // $(document).ready( function () {
+        //     $('#clearinfo').DataTable();
+        // });
+
+        $('#clearinfo').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            } );
     });
 </script>

@@ -4,6 +4,7 @@
     $password='';
     $host='localhost';
     $db = 'soc';
+    // $db = ' id12669667_testing';
 
     $con = mysqli_connect($host, $username, $password, $db);
 

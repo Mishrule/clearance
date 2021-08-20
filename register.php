@@ -164,7 +164,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
 
 	<!-- PAGE TITLE HERE ============================================= -->
-	<title>EduChamp : Education HTML Template </title>
+	<title>SOC : Register </title>
 
 	<!-- MOBILE SPECIFIC ============================================= -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -194,13 +194,13 @@
 		<!-- <div id="loading-icon-bx"></div> -->
 		<div class="account-form">
 			<div class="account-head" style="background-image:url(assets/images/background/bg2.jpg);">
-				<a href="index.html"><img src="assets/images/logo-white-2.png" alt=""></a>
+				<a href="index.php"><img src="assets/images/logo-white-2.png" alt=""></a>
 			</div>
 			<div class="account-form-inner">
 				<div class="account-container">
 					<div class="heading-bx left">
 						<h2 class="title-head">Sign Up <span>Now</span></h2>
-						<p>Login Your Account <a href="login.html">Click here</a></p>
+						<p>Login Your Account <a href="login.php">Click here</a></p>
 					</div>
 
 					<?php echo $signUpMessage;?>

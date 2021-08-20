@@ -33,7 +33,7 @@
 						<div class="widget-inner">
 							<div class="card-courses-list admin-courses">
 								<div class="card-courses-media">
-									<img src="assets/images/courses/pic1.jpg" alt="" />
+									<img src="../assets/img/confirm.jpg" alt="" />
 								</div>
 								<div class="card-courses-full-dec">
 									<div class="card-courses-title">
@@ -43,7 +43,7 @@
 										<ul class="card-courses-view">
 											<li class="card-courses-user">
 												<div class="card-courses-user-pic">
-													<img src="assets/images/testimonials/pic3.jpg" alt="" />
+												<img src="../assets/img/confirm.jpg" alt="" />
 												</div>
 												<div class="card-courses-user-info">
 													<h5></h5>
@@ -104,7 +104,7 @@
 							</div>
 							<div class="card-courses-list admin-courses">
 								<div class="card-courses-media">
-									<img src="assets/images/courses/pic1.jpg" alt="" />
+								<img src="../assets/img/confirm.jpg" alt="" />
 								</div>
 								<div class="card-courses-full-dec">
 									<div class="card-courses-title">
@@ -114,7 +114,7 @@
 										<ul class="card-courses-view">
 											<li class="card-courses-user">
 												<div class="card-courses-user-pic">
-													<img src="assets/images/testimonials/pic3.jpg" alt="" />
+												<img src="../assets/img/confirm.jpg" alt="" />
 												</div>
 												<div class="card-courses-user-info">
 													<h5></h5>
@@ -175,7 +175,7 @@
 							</div>
 							<div class="card-courses-list admin-courses">
 								<div class="card-courses-media">
-									<img src="assets/images/courses/pic1.jpg" alt="" />
+								<img src="../assets/img/confirm.jpg" alt="" />
 								</div>
 								<div class="card-courses-full-dec">
 									<div class="card-courses-title">
@@ -185,7 +185,7 @@
 										<ul class="card-courses-view">
 											<li class="card-courses-user">
 												<div class="card-courses-user-pic">
-													<img src="assets/images/testimonials/pic3.jpg" alt="" />
+												<img src="../assets/img/confirm.jpg" alt="" />
 												</div>
 												<div class="card-courses-user-info">
 													<h5></h5>
@@ -247,7 +247,7 @@
 
 							<div class="card-courses-list admin-courses">
 								<div class="card-courses-media">
-									<img src="assets/images/courses/pic1.jpg" alt="" />
+								<img src="../assets/img/confirm.jpg" alt="" />
 								</div>
 								<div class="card-courses-full-dec">
 									<div class="card-courses-title">
@@ -257,7 +257,7 @@
 										<ul class="card-courses-view">
 											<li class="card-courses-user">
 												<div class="card-courses-user-pic">
-													<img src="assets/images/testimonials/pic3.jpg" alt="" />
+												<img src="../assets/img/confirm.jpg" alt="" />
 												</div>
 												<div class="card-courses-user-info">
 													<h5></h5>
